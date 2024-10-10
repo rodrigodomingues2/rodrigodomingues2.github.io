@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Multimédia</title>
+</head>
+<body>
+    <header>
+        <h1>A minha Cidade</h1>
+        <link rel="stylesheet" href="styles.css">
+    </header>
+
+    <!-- Menu de Navegação -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="local.html">Localização</a>
+        <a href="multimedia.html">Multimédia</a>
+        <a href="info.html">Informação</a>
+    </nav>
+
+    <main>
+        <h2>Multimédia</h2>
+
+        <!-- Links âncora para seções -->
+        <p>
+            <a href="#fotografias">Ir para Fotografias</a> | 
+            <a href="#video">Ir para Vídeo</a> | 
+            <a href="#poema">Ir para Poema</a>
+        </p>
+
+        <!-- Seção de Fotografias -->
+        <h3 id="fotografias">Fotografias</h3>
+        <p>
+            <a href="images/Ed1.jpg" target="fotoGrande">
+                <img src="images/Ed2.jpg" alt="Foto de edifício 1" width="120" height="80">
+            </a>
+            <a href="images/Ponte1.jpeg" target="fotoGrande">
+                <img src="images/Ponte2.jpeg" alt="Foto da ponte" width="120" height="80">
+            </a>
+            <a href="images/Top1.jpg" target="fotoGrande">
+                <img src="images/Top2.jpg" alt="Vista panorâmica da cidade" width="120" height="80">
+            </a>
+        </p>
+
+        <!-- Iframe para exibir a imagem grande -->
+        <iframe name="fotoGrande" width="800" height="600" frameborder="0" style="border: none;"></iframe>
+
+        <!-- Seção de Vídeo -->
+        <h3 id="video">Vídeo</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/hanE_bysWro?si=4VtgKYlDbI68oErM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        <!-- Seção de Poema -->
+        <h3 id="poema">Poema</h3>
+        <blockquote>
+            <p>
+                Nas colinas do vento, ergue-se a cidade,<br>
+                Com a ponte dourada, símbolo da liberdade.<br>
+                As ruas serpenteiam, íngremes, ao mar,<br>
+                Onde o nevoeiro dança, a nos encantar.<br><br>
+
+                Os bondes que sobem, com seus sons tão fieis,<br>
+                Cruzam bairros antigos, como em papéis.<br>
+                Em Chinatown cores, em Castro, celebração,<br>
+                São Francisco acolhe de coração.<br><br>
+
+                Do Pacífico vem a brisa a soprar,<br>
+                E sob a Golden Gate, barcos a passar.<br>
+                Cidade de sonhos, de luz e mar,<br>
+                São Francisco, para sempre a brilhar.
+            </p>
+        </blockquote>
+    </main>
+
+    <footer>
+        <p>DIW 2024</p>
+    </footer>
+</body>
+</html>
