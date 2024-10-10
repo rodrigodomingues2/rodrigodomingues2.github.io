@@ -32,6 +32,7 @@ nav a {
 /* Muda a cor dos links quando passam o mouse */
 nav a:hover {
     background-color: #555; /* Cor de fundo ao passar o mouse */
+    color: black; /* Cor do texto ao passar o mouse */
 }
 
 /* Estilo para a seção principal */
