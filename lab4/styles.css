@@ -57,3 +57,35 @@ img {
     max-width: 100%; 
     height: auto; 
 }
+
+/* Estilização para as seções da página multimédia */
+#fotografias, #video, #poema {
+    background-color: #f9f9f9; /* Cor de fundo clara para as seções */
+    padding: 20px; /* Preenchimento interno */
+    border-radius: 8px; /* Cantos arredondados */
+    margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+/* Estilo para os títulos h3 das seções */
+#fotografias h3, #video h3, #poema h3 {
+    color: #4CAF50; /* Cor verde para os títulos */
+    font-size: 24px; /* Tamanho da fonte */
+    border-bottom: 2px solid #4CAF50; /* Linha abaixo do título */
+    padding-bottom: 10px; /* Espaçamento abaixo do título */
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+}
+
+/* Estilo para parágrafos */
+#fotografias p, #video p, #poema p {
+    font-size: 16px; /* Tamanho da fonte */
+    line-height: 1.5; /* Espaçamento entre linhas */
+    margin-bottom: 15px; /* Espaçamento inferior */
+}
+
+/* Estilo para as imagens dentro das seções */
+#fotografias img, #video img, #poema img {
+    max-width: 100%; /* Limita a largura das imagens */
+    height: auto; /* Mantém a proporção das imagens */
+    margin: 0 auto; /* Centraliza as imagens */
+    display: block; /* Faz com que as imagens se comportem como blocos */
+}
