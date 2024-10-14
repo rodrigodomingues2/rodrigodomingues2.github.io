@@ -1,86 +1,113 @@
 /* styles.css */
 
+/* Demais estilos previamente definidos */
 body {
-    font-family: Arial, sans-serif; /* Fonte padrão */
-    background-color: #f4f4f4; /* Cor de fundo clara */
-    margin: 0; /* Remove margens padrões */
-    padding: 0; /* Remove preenchimento padrões */
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
 }
 
 /* Estilo para o cabeçalho */
 header {
-    background-color: #4CAF50; /* Cor de fundo verde */
-    color: white; /* Cor do texto branco */
-    text-align: center; /* Centraliza o texto no cabeçalho */
-    padding: 20px; /* Adiciona preenchimento no cabeçalho */
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    text-transform: uppercase; /* Nome da cidade todo em maiúsculas */
 }
 
 /* Estilo para o menu de navegação */
 nav {
-    background-color: #333; /* Cor de fundo do menu */
-    padding: 10px; /* Preenchimento no menu */
-    text-align: center; /* Centraliza o texto no menu */
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
 }
 
 /* Estilo para os links no menu */
 nav a {
-    color: white; /* Cor dos links */
-    margin: 0 15px; /* Margem lateral entre links */
-    text-decoration: none; /* Remove o sublinhado */
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
 }
 
 /* Efeito ao passar o mouse sobre os links do menu */
 nav a:hover {
-    background-color: #ddd; /* Cor de fundo ao passar o mouse */
-    color: black; /* Cor do texto ao passar o mouse */
-    padding: 5px; /* Preenchimento extra ao passar o mouse */
+    background-color: #ddd;
+    color: black;
+    padding: 5px;
 }
 
-/* Estilo para seções específicas */
-#fotografias, #video, #poema {
-    background-color: #f9f9f9; /* Cor de fundo clara para as seções */
-    padding: 20px; /* Preenchimento interno */
-    border-radius: 8px; /* Cantos arredondados */
-    margin-bottom: 20px; /* Espaçamento inferior */
+/* Estilo para as secções */
+section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
 }
 
-/* Estilo para os títulos h3 nas seções */
-#fotografias h3, #video h3, #poema h3 {
-    color: #4CAF50; /* Cor verde para os títulos */
-    font-size: 24px; /* Tamanho da fonte */
-    border-bottom: 2px solid #4CAF50; /* Linha abaixo do título */
-    padding-bottom: 10px; /* Espaçamento abaixo do título */
-    margin-bottom: 20px; /* Espaçamento abaixo do título */
+/* Estilo para a tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
 }
 
-/* Estilo para parágrafos */
-#fotografias p, #video p, #poema p {
-    font-size: 16px; /* Tamanho da fonte */
-    line-height: 1.5; /* Espaçamento entre linhas */
-    margin-bottom: 15px; /* Espaçamento inferior */
+/* Estilo para os cabeçalhos da tabela */
+th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
 }
 
-/* Estilo para a classe .poema */
-.poema {
-    font-style: italic; /* Estilo itálico para o texto */
-    margin-bottom: 20px; /* Espaçamento inferior */
-    line-height: 1.8; /* Espaçamento entre linhas */
-    text-align: justify; /* Justifica o texto */
+/* Estilo para as células da tabela */
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
 }
 
-/* Estilo para as imagens dentro das seções */
-#fotografias img, #video img, #poema img {
-    max-width: 100%; /* Limita a largura das imagens */
-    height: auto; /* Mantém a proporção das imagens */
-    margin: 0 auto; /* Centraliza as imagens */
-    display: block; /* Faz com que as imagens se comportem como blocos */
+/* Alterna as cores das linhas da tabela */
+tr:nth-child(odd) td {
+    background-color: #333;
+    color: white;
+}
+
+tr:nth-child(even) td {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Estilo específico para a primeira coluna (Mês) */
+td:first-child {
+    background-color: #2F4F4F;
+    color: white;
+    font-weight: bold;
+}
+
+/* Estilo específico para a segunda coluna (Ranking) */
+td:last-child {
+    background-color: white;
+    color: black;
+}
+
+/* Estilo para listas não ordenadas */
+ul {
+    list-style-type: square; /* Altera o ícone das listas */
+}
+
+/* Estilo para os itens das listas */
+ul li, ol li {
+    font-size: 2em; /* Define o tamanho da fonte em relação ao pai */
 }
 
 /* Estilo para o rodapé */
 footer {
-    background-color: #333; /* Cor de fundo do rodapé */
-    color: white; /* Cor do texto no rodapé */
-    text-align: center; /* Centraliza o texto no rodapé */
-    padding: 10px; /* Adiciona preenchimento no rodapé */
-    margin-top: 20px; /* Espaçamento acima do rodapé */
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
 }

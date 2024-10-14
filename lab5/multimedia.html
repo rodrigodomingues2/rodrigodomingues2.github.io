@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Multimédia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Link para a fonte do Google -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/multimedia.css">
 </head>
 <body>
     <header>
         <h1>São Francisco</h1>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="css/multimedia.css">
     </header>
 
     <!-- Menu de Navegação -->
@@ -32,13 +33,13 @@
         <!-- Seção de Fotografias -->
         <h3 id="fotografias">Fotografias</h3>
         <p>
-            <a href="images/Ed1.jpg" target="fotoGrande">
+            <a href="images/Ed1.jpg" target="fotoGrande" class="open-image">
                 <img src="images/Ed2.jpg" alt="Foto de edifício 1" width="120" height="80">
             </a>
-            <a href="images/Ponte1.jpeg" target="fotoGrande">
+            <a href="images/Ponte1.jpeg" target="fotoGrande" class="open-image">
                 <img src="images/Ponte2.jpeg" alt="Foto da ponte" width="120" height="80">
             </a>
-            <a href="images/Top1.jpg" target="fotoGrande">
+            <a href="images/Top1.jpg" target="fotoGrande" class="open-image">
                 <img src="images/Top2.jpg" alt="Vista panorâmica da cidade" width="120" height="80">
             </a>
         </p>
@@ -53,7 +54,7 @@
         <!-- Seção de Poema -->
         <h3 id="poema">Poema</h3>
         <blockquote>
-            <p>
+            <p class="poema-paragrafo">
                 Nas colinas do vento, ergue-se a cidade,<br>
                 Com a ponte dourada, símbolo da liberdade.<br>
                 As ruas serpenteiam, íngremes, ao mar,<br>

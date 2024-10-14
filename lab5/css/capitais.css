@@ -1,0 +1,90 @@
+/* Estilos para o artigo das capitais */
+article#cidades {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 5px;
+    background: whitesmoke;
+}
+
+#cidades section {
+    display: flex;
+    margin: 10px;
+}
+
+#cidades img {
+    width: 100px;
+    border-radius: 20px 0 0 20px;
+}
+
+#cidades div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100%;
+    border-radius: 0 20px 20px 0;
+    background: white;
+}
+
+/* Estilos para a seção "experimenta" */
+#experimenta {
+    display: flex;
+    justify-content: space-around; /* Espaçamento entre os círculos */
+    align-items: center; /* Alinhamento vertical */
+    margin: 20px 0; /* Margens superior e inferior */
+}
+
+/* Estilo dos círculos */
+.circle {
+    width: 100px; /* Largura do círculo */
+    height: 100px; /* Altura do círculo */
+    background-color: #4CAF50; /* Cor de fundo */
+    border-radius: 50%; /* Tornar quadrado em círculo */
+    display: flex; /* Flexbox para centrar o texto */
+    align-items: center; /* Alinhamento vertical do texto */
+    justify-content: center; /* Alinhamento horizontal do texto */
+    position: relative; /* Para posicionar o texto oculto */
+    color: white; /* Cor do texto */
+    font-weight: bold; /* Texto em negrito */
+    transition: background-color 0.3s; /* Transição suave de cor */
+}
+
+.circle:hover {
+    background-color: #45a049; /* Muda a cor ao passar o mouse */
+}
+
+/* Oculta o segundo texto */
+.hidden {
+    display: none; /* Inicialmente oculto */
+    position: absolute; /* Para posicionar em cima do círculo */
+    width: 100%; /* Ocupa toda a largura do círculo */
+    height: 100%; /* Ocupa toda a altura do círculo */
+    top: 0; /* Alinhado ao topo */
+    left: 0; /* Alinhado à esquerda */
+    display: flex; /* Para centralizar o texto oculto */
+    align-items: center; /* Alinhamento vertical do texto */
+    justify-content: center; /* Alinhamento horizontal do texto */
+}
+
+/* Exibe o texto oculto ao passar o mouse no círculo */
+.circle:hover + .hidden {
+    display: flex; /* Mostra quando hover */
+}
+
+/* Para fazer o texto oculto aparecer */
+.circle:hover {
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+}
+
+/* Estilos adicionais para o poema */
+#poema {
+    background-color: lightgreen;
+    text-align: center;
+    height: 50vh;
+}
+
+#paisagem {
+    position: relative;
+}
