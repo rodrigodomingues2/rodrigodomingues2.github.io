@@ -1,31 +1,35 @@
 /* Estilos para o artigo das capitais */
 article#cidades {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Layout flexível */
+    gap: 20px;
     padding: 5px;
     background: whitesmoke;
 }
 
 #cidades section {
-    display: flex;
-    margin: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+#cidades section:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
 }
 
 #cidades img {
-    width: 100px;
-    border-radius: 20px 0 0 20px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
 }
 
 #cidades div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100px;
-    height: 100%;
-    border-radius: 0 20px 20px 0;
-    background: white;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
 /* Estilos para a seção "experimenta" */
@@ -56,7 +60,7 @@ article#cidades {
 }
 
 /* Oculta o segundo texto */
-.hidden {
+.circle .hidden {
     display: none; /* Inicialmente oculto */
     position: absolute; /* Para posicionar em cima do círculo */
     width: 100%; /* Ocupa toda a largura do círculo */
@@ -69,13 +73,8 @@ article#cidades {
 }
 
 /* Exibe o texto oculto ao passar o mouse no círculo */
-.circle:hover + .hidden {
+.circle:hover .hidden {
     display: flex; /* Mostra quando hover */
-}
-
-/* Para fazer o texto oculto aparecer */
-.circle:hover {
-    cursor: pointer; /* Muda o cursor ao passar o mouse */
 }
 
 /* Estilos adicionais para o poema */
@@ -83,8 +82,28 @@ article#cidades {
     background-color: lightgreen;
     text-align: center;
     height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    font-weight: bold;
 }
 
 #paisagem {
     position: relative;
+}
+
+#paisagem img {
+    width: 100%;
+    height: auto;
+}
+
+#paisagem p {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
 }
