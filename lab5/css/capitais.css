@@ -72,33 +72,33 @@ article:last-child {
     color: white;
 }
 
+/* Estilos para o artigo do poema */
 #poema {
-    width: 100vw;
-    height: 50vh;
-    background-color: #f7f7f7;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #87CEEB; /* Cor de fundo azul */
+    width: 100vw;
+    height: 50vh;
 }
 
 #poema div {
     text-align: center;
-}
-
-#poema div p {
-    font-size: 18px;
-    margin: 10px;
-}
-
-#poema div p:first-child {
-    font-weight: bold;
-}
-
-#poema div p:last-child {
     font-style: italic;
-    font-size: 14px;
-    color: #666;
 }
+
+#poema p {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#poema em {
+    font-weight: normal;
+    font-style: italic;
+    display: block;
+    margin-top: 20px;
+}
+
 
 /*paisagemmmmm */
 #paisagem {
