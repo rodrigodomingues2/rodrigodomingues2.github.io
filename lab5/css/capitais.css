@@ -1,80 +1,37 @@
 /* Estilos para o artigo das capitais */
 article#cidades {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Layout flexível */
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Definição de colunas flexíveis */
+    gap: 10px; /* Espaçamento entre as cidades */
     padding: 5px;
     background: whitesmoke;
 }
 
 #cidades section {
+    display: flex; 
+    align-items: center;
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar os blocos */
     transition: transform 0.2s ease-in-out;
 }
 
 #cidades section:hover {
-    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+    transform: scale(1.02);
 }
 
 #cidades img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
+    width: 150px; /* Definindo largura fixa para as imagens */
+    height: auto; /* Manter a proporção da imagem */
+    border-radius: 10px 0 0 10px;
+    object-fit: cover; /* Para garantir que a imagem preencha o espaço */
 }
 
 #cidades div {
-    text-align: center;
     padding: 10px;
+    text-align: center;
     font-weight: bold;
-    font-size: 1.2em;
-}
-
-/* Estilos para a seção "experimenta" */
-#experimenta {
-    display: flex;
-    justify-content: space-around; /* Espaçamento entre os círculos */
-    align-items: center; /* Alinhamento vertical */
-    margin: 20px 0; /* Margens superior e inferior */
-}
-
-/* Estilo dos círculos */
-.circle {
-    width: 100px; /* Largura do círculo */
-    height: 100px; /* Altura do círculo */
-    background-color: #4CAF50; /* Cor de fundo */
-    border-radius: 50%; /* Tornar quadrado em círculo */
-    display: flex; /* Flexbox para centrar o texto */
-    align-items: center; /* Alinhamento vertical do texto */
-    justify-content: center; /* Alinhamento horizontal do texto */
-    position: relative; /* Para posicionar o texto oculto */
-    color: white; /* Cor do texto */
-    font-weight: bold; /* Texto em negrito */
-    transition: background-color 0.3s; /* Transição suave de cor */
-}
-
-.circle:hover {
-    background-color: #45a049; /* Muda a cor ao passar o mouse */
-}
-
-/* Oculta o segundo texto */
-.circle .hidden {
-    display: none; /* Inicialmente oculto */
-    position: absolute; /* Para posicionar em cima do círculo */
-    width: 100%; /* Ocupa toda a largura do círculo */
-    height: 100%; /* Ocupa toda a altura do círculo */
-    top: 0; /* Alinhado ao topo */
-    left: 0; /* Alinhado à esquerda */
-    display: flex; /* Para centralizar o texto oculto */
-    align-items: center; /* Alinhamento vertical do texto */
-    justify-content: center; /* Alinhamento horizontal do texto */
-}
-
-/* Exibe o texto oculto ao passar o mouse no círculo */
-.circle:hover .hidden {
-    display: flex; /* Mostra quando hover */
+    flex: 1; /* O texto ocupa o restante do espaço */
 }
 
 /* Estilos adicionais para o poema */
@@ -87,23 +44,14 @@ article#cidades {
     align-items: center;
     font-style: italic;
     font-weight: bold;
+    padding: 20px;
+}
+
+#poema span {
+    font-weight: normal;
+    font-style: normal;
 }
 
 #paisagem {
-    position: relative;
-}
-
-#paisagem img {
-    width: 100%;
-    height: auto;
-}
-
-#paisagem p {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
+    display: none; /* Oculta a imagem grande */
 }
