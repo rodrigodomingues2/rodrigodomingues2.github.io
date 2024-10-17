@@ -1,57 +1,34 @@
-/* Estilos para o artigo das capitais */
-article#cidades {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Definição de colunas flexíveis */
-    gap: 10px; /* Espaçamento entre as cidades */
-    padding: 5px;
-    background: whitesmoke;
-}
-
-#cidades section {
-    display: flex; 
-    align-items: center;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar os blocos */
-    transition: transform 0.2s ease-in-out;
-}
-
-#cidades section:hover {
-    transform: scale(1.02);
-}
-
-#cidades img {
-    width: 150px; /* Definindo largura fixa para as imagens */
-    height: auto; /* Manter a proporção da imagem */
-    border-radius: 10px 0 0 10px;
-    object-fit: cover; /* Para garantir que a imagem preencha o espaço */
-}
-
-#cidades div {
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-    flex: 1; /* O texto ocupa o restante do espaço */
-}
-
-/* Estilos adicionais para o poema */
-#poema {
-    background-color: lightgreen;
-    text-align: center;
-    height: 50vh;
+/* capitais ª*/
+#cidades {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    font-style: italic;
-    font-weight: bold;
+    background-color: #f7f7f7;
     padding: 20px;
-}
+  }
 
-#poema span {
-    font-weight: normal;
-    font-style: normal;
-}
+  #cidades section {
+    margin: 10px;
+    width: 100px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
 
-#paisagem {
-    display: none; /* Oculta a imagem grande */
-}
+  #cidades section img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+  }
+
+  #cidades section div {
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+  }
+
+  #cidades section div:hover {
+    background-color: #ddd;
+  }
