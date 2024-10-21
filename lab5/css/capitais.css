@@ -103,7 +103,7 @@ article:last-child {
 /*paisagemmmmm */
 #paisagem {
     width: 100%;
-    height: 50%;
+    height: 80vh; /* Aumenta a altura para 80% da altura da tela */
     background-color: #f7f7f7;
 }
 
@@ -116,7 +116,7 @@ article:last-child {
 .imagem-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Mantém o corte para cobrir toda a área */
 }
 
 .imagem-container p {
