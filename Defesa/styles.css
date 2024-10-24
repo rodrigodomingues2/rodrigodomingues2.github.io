@@ -36,64 +36,68 @@ h1 {
 }
 
 .left-column {
-    width: 68%; 
+    width: 68%; /* Ajustado para dar mais espaço */
+    display: flex;
+    flex-direction: column;
 }
 
 .interface-web {
-    background-color: white; 
+    background-color: white; /* Fundo branco para a seção Interfaces Web */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px; 
+    flex-grow: 1; /* Faz a seção ocupar todo o espaço disponível */
 }
 
 .introducao {
-    background-color: white; 
+    background-color: white; /* Fundo branco para a seção de Introdução */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%; 
+    width: 100%; /* Largura total da introdução */
+    margin-top: 20px; /* Espaçamento entre a interface web e a introdução */
 }
 
 .right-column {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; 
-    width: 28%; 
+    align-items: flex-start; /* Ajusta a posição dos labs à esquerda */
+    width: 28%; /* Ajustado para o layout */
 }
 
 .labs {
-    background-color: white; 
+    background-color: white; /* Fundo branco para os labs */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%; 
+    width: 100%; /* Largura total da coluna */
 }
 
 .labs ul {
     list-style: none;
     padding: 0;
-    display: flex; 
-    flex-wrap: wrap; 
+    display: flex; /* Flexbox para alinhar os labs */
+    flex-direction: column; /* Alinha os labs em coluna */
+    align-items: center; /* Centraliza os labs horizontalmente */
 }
 
 .labs li {
-    margin: 5px; 
-    width: 80px; 
-    height: 80px; 
+    margin: 5px; /* Espaçamento entre os labs */
+    width: 80px; /* Largura fixa para os labs */
+    height: 80px; /* Altura fixa para os labs */
 }
 
 .labs a {
     text-decoration: none;
     background-color: #ddd;
-    padding: 10px; 
+    padding: 10px; /* Ajustado para manter quadrado */
     border-radius: 5px;
     color: black;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    height: 100%; 
+    display: flex; /* Flexbox para centralizar o texto */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 100%; /* Preenche toda a altura do li */
 }
 
 .labs a:hover {
