@@ -36,7 +36,7 @@ h1 {
 }
 
 .left-column {
-    width: 68%; /* Ajustado para dar mais espaço */
+    width: 68%; 
     display: flex;
     flex-direction: column;
 }
@@ -54,45 +54,42 @@ h1 {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.right-column {
-    width: 28%; /* Ajustado para o layout */
+    margin-bottom: 20px; 
 }
 
 .labs {
-    background-color: white; /* Fundo branco para os labs */
+    background-color: white; 
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .labs h3 {
-    margin: 0 0 20px; /* Espaçamento abaixo do título "Laboratórios" */
+    margin: 0 0 20px; 
 }
 
 .labs ul {
     list-style: none;
     padding: 0;
-    display: flex; /* Flexbox para alinhar os labs */
-    flex-direction: column; /* Alinha os labs em coluna */
-    align-items: flex-start; /* Alinha os labs à esquerda */
+    display: flex; 
+    flex-direction: column; 
 }
 
 .labs li {
-    margin: 5px 0; /* Espaçamento entre os labs */
-    width: 100%; /* Largura total para os labs */
+    margin: 10px 0; 
+    width: 100%; 
 }
 
 .labs a {
     text-decoration: none;
     background-color: #ddd;
-    padding: 10px; /* Ajustado para manter quadrado */
+    padding: 20px; 
     border-radius: 5px;
     color: black;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: block; /* Permite que o link ocupe toda a largura do li */
-    text-align: center; /* Centraliza o texto */
+    display: block; 
+    text-align: center; 
+    transition: background-color 0.3s; 
 }
 
 .labs a:hover {
