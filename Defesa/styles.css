@@ -36,64 +36,64 @@ h1 {
 }
 
 .left-column {
-    width: 68%; /* Ajustado para dar mais espaço */
+    width: 68%; 
 }
 
 .interface-web {
-    background-color: white; /* Fundo branco para a seção Interfaces Web */
+    background-color: white; 
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px; /* Espaçamento entre a interface web e a introdução */
+    margin-bottom: 20px; 
 }
 
 .introducao {
-    background-color: white; /* Fundo branco para a seção de Introdução */
+    background-color: white; 
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Largura total para o quadrado da introdução */
+    width: 100%; 
 }
 
 .right-column {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Ajusta a posição dos labs à esquerda */
-    width: 28%; /* Ajustado para o layout */
+    align-items: flex-start; 
+    width: 28%; 
 }
 
 .labs {
-    background-color: white; /* Fundo branco para os labs */
+    background-color: white; 
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Largura total da coluna */
+    width: 100%; 
 }
 
 .labs ul {
     list-style: none;
     padding: 0;
-    display: flex; /* Flexbox para alinhar os labs */
-    flex-wrap: wrap; /* Permite quebrar linhas */
+    display: flex; 
+    flex-wrap: wrap; 
 }
 
 .labs li {
-    margin: 5px; /* Espaçamento entre os labs */
-    width: 80px; /* Largura fixa para os labs */
-    height: 80px; /* Altura fixa para os labs */
+    margin: 5px; 
+    width: 80px; 
+    height: 80px; 
 }
 
 .labs a {
     text-decoration: none;
     background-color: #ddd;
-    padding: 10px; /* Ajustado para manter quadrado */
+    padding: 10px; 
     border-radius: 5px;
     color: black;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex; /* Flexbox para centralizar o texto */
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    height: 100%; /* Preenche toda a altura do li */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100%; 
 }
 
 .labs a:hover {
