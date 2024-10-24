@@ -9,68 +9,77 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px; /* Definir uma altura para o cabeçalho */
+    height: 150px; /* Altura ajustada */
     background-color: #f8f8f8;
 }
 
 h1 {
-    margin: 0;
     font-size: 2rem;
-    background-color: white; /* Fundo branco */
-    padding: 20px 40px; /* Padding para criar espaço dentro do retângulo */
-    border-radius: 10px; /* Bordas arredondadas */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+    background-color: white;
+    padding: 10px 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-}
-
-.intro {
-    text-align: center;
-    margin: 20px;
-}
-
-.intro h2 {
-    font-size: 1.5rem;
-}
-
-.intro p {
-    font-style: italic;
+    margin: 0;
 }
 
 .content {
     display: flex;
     justify-content: space-around;
     margin: 20px;
+    flex-wrap: wrap; /* Permitir que o conteúdo seja responsivo */
 }
 
-.intro-text, .labs {
+.left-column, .right-column {
+    flex: 1;
+    padding: 20px;
+}
+
+.left-column {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    margin: 10px;
 }
 
-.labs h3 {
+.right-column {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    margin: 10px;
+}
+
+.labs {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.labs li {
+    list-style: none;
+    margin: 10px;
+}
+
+.labs a {
+    text-decoration: none;
+    background-color: #ddd;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    width: 80px;
     text-align: center;
 }
 
-.lab-buttons {
-    display: flex;
-    justify-content: space-between;
-}
-
-.lab-buttons button {
-    background-color: #ddd;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-.lab-buttons button:disabled {
+.labs a:hover {
     background-color: #333;
     color: white;
-    cursor: not-allowed;
 }
 
 footer {
@@ -78,4 +87,5 @@ footer {
     padding: 20px;
     background-color: #f8f8f8;
     margin-top: 20px;
+    font-size: 0.9rem;
 }
