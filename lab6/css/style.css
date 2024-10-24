@@ -6,10 +6,22 @@
     font-family: sans-serif;
 }
 
+/* Estilos para o layout do body */
+body {
+    display: grid;
+    height: 100vh; /* Mudando para 100vh para usar toda a altura da tela */
+    grid-template-columns: 1fr 3fr 2fr; /* Definindo as colunas */
+    grid-template-rows: 20% 1fr 50px; /* Definindo as linhas */
+    grid-template-areas:
+        "header-area header-area header-area"
+        "menu-area main-area right-area"
+        "menu-area footer-area footer-area";
+    background-color: green; /* Cor de fundo padrão */
+}
+
 /* Estilos para o cabeçalho */
-header {
-    position: sticky;
-    top: 0;
+.header-area {
+    grid-area: header-area;
     height: 10vh;
     background-color: purple;
     color: white;
@@ -20,47 +32,30 @@ header {
     z-index: 1000; /* Fica sobre o conteúdo ao rolar */
 }
 
-header div {
+.header-area div {
     font-size: 2em;
 }
 
-header nav {
+.header-area nav {
     display: flex;
     justify-content: flex-end;
 }
 
-nav a {
+.header-area nav a {
     padding: 20px;
     text-decoration: none;
     font-size: 1rem;
     color: lightgray;
+    transition: color 0.3s ease; /* Transição suave */
 }
 
-nav a:hover {
+.header-area nav a:hover {
     color: white;
-}
-
-nav a:link {
-    color: lightgray;
-}
-
-nav a:visited {
-    color: lightgray;
-}
-
-nav a:active {
-    color: white;
-}
-
-/* Diferenciar o último link */
-.last-link {
-    background-color: #ff9800;
-    color: white;
-    border-radius: 5px;
 }
 
 /* Estilos gerais */
 main {
+    grid-area: main-area;
     padding: 4em 2em;
     background-color: #f4f4f4;
 }
@@ -104,7 +99,8 @@ section h2 {
 }
 
 /* Estilos para o rodapé */
-footer {
+.footer-area {
+    grid-area: footer-area;
     height: 5vh;
     display: flex;
     justify-content: flex-end;
@@ -112,4 +108,45 @@ footer {
     padding: 0 20px;
     background-color: #333;
     color: white;
+}
+
+/* Estilos para o aside */
+.sidebar {
+    padding: 20px;
+    background-color: #f4f4f4; /* Cor de fundo para o aside */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+}
+
+/* Media queries para responsividade */
+@media (max-width: 600px) {
+    body {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+        grid-template-rows: auto; /* Ajusta as linhas */
+        grid-template-areas:
+            "header-area"
+            "main-area"
+            "footer-area"; /* Remove a área do menu */
+        background-color: blue; /* Mudando a cor de fundo para azul */
+    }
+
+    .header-area {
+        flex-direction: column; /* Coloca os itens do cabeçalho em coluna */
+        height: auto; /* Ajusta a altura do cabeçalho */
+    }
+
+    main {
+        padding: 2em 1em; /* Reduzir o padding em telas menores */
+    }
+
+    section {
+        margin-bottom: 30px; /* Menor margem entre seções */
+    }
+
+    section h2 {
+        font-size: 1.2rem; /* Diminuir tamanho da fonte em telas menores */
+    }
+
+    .sidebar {
+        display: none; /* Esconde o aside em telas menores, se necessário */
+    }
 }

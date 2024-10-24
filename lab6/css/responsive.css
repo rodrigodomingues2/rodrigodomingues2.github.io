@@ -1,0 +1,182 @@
+/* Reset básico para todos os dispositivos */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Mobile Portrait */
+@media (max-width: 480px) {
+    body {
+        display: grid;
+        grid-template-areas:
+            "header-area"
+            "main-area"
+            "footer-area";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr 50px; /* Ajusta as linhas */
+        height: 100vh;
+    }
+
+    .header-area {
+        grid-area: header-area;
+        background-color: purple;
+        color: white;
+        text-align: center;
+        padding: 10px;
+    }
+
+    main {
+        grid-area: main-area;
+        padding: 10px;
+        background-color: #f4f4f4;
+    }
+
+    .footer-area {
+        grid-area: footer-area;
+        background-color: #333;
+        color: white;
+        text-align: center;
+    }
+}
+
+/* Mobile Landscape */
+@media (min-width: 481px) and (max-width: 767px) {
+    body {
+        display: grid;
+        grid-template-areas:
+            "header-area header-area"
+            "main-area footer-area";
+        grid-template-columns: 1fr 1fr; /* Duas colunas */
+        height: auto;
+    }
+
+    .header-area {
+        grid-area: header-area;
+        background-color: purple;
+        color: white;
+        text-align: center;
+        padding: 10px;
+    }
+
+    main {
+        grid-area: main-area;
+        padding: 10px;
+        background-color: #f4f4f4;
+    }
+
+    .footer-area {
+        grid-area: footer-area;
+        background-color: #333;
+        color: white;
+        text-align: center;
+    }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+    body {
+        display: grid;
+        grid-template-areas:
+            "header-area header-area header-area"
+            "menu-area main-area right-area"
+            "footer-area footer-area footer-area";
+        grid-template-columns: 1fr 3fr 1fr;
+        height: auto;
+    }
+
+    .header-area {
+        grid-area: header-area;
+        background-color: purple;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+    }
+
+    main {
+        grid-area: main-area;
+        padding: 20px;
+        background-color: #f4f4f4;
+    }
+
+    .footer-area {
+        grid-area: footer-area;
+        background-color: #333;
+        color: white;
+        text-align: center;
+    }
+}
+
+/* Laptop */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    body {
+        display: grid;
+        grid-template-areas:
+            "header-area header-area header-area"
+            "menu-area main-area right-area"
+            "footer-area footer-area footer-area";
+        grid-template-columns: 1fr 3fr 1fr;
+        height: auto;
+    }
+
+    .header-area {
+        grid-area: header-area;
+        background-color: purple;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+    }
+
+    main {
+        grid-area: main-area;
+        padding: 20px;
+        background-color: #f4f4f4;
+    }
+
+    .footer-area {
+        grid-area: footer-area;
+        background-color: #333;
+        color: white;
+        text-align: center;
+    }
+}
+
+/* 4K */
+@media (min-width: 1441px) {
+    body {
+        display: grid;
+        grid-template-areas:
+            "header-area header-area header-area"
+            "menu-area main-area right-area"
+            "footer-area footer-area footer-area";
+        grid-template-columns: 1fr 3fr 2fr; /* Mais espaço para o aside */
+        height: auto;
+    }
+
+    .header-area {
+        grid-area: header-area;
+        background-color: purple;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+    }
+
+    main {
+        grid-area: main-area;
+        padding: 20px;
+        background-color: #f4f4f4;
+    }
+
+    .footer-area {
+        grid-area: footer-area;
+        background-color: #333;
+        color: white;
+        text-align: center;
+    }
+}
