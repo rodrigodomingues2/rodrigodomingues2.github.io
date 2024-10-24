@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Quizz - São Francisco</title>
+</head>
+<body>
+    <header>
+        <h1>São Francisco</h1>
+        <link rel="stylesheet" href="css/styles.css">
+        <!-- Menu de Navegação -->
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="local.html">Localização</a>
+            <a href="multimedia.html">Multimédia</a>
+            <a href="info.html">Informação</a>
+            <a href="quizz.html">Quizz</a>
+            <a href="viagem.html">Viagem</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Quizz sobre São Francisco</h2>
+        
+        <form method="get" action="https://postman-echo.com/get">
+            <!-- Dados Pessoais -->
+            <fieldset>
+                <legend>Dados Pessoais</legend>
+                
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" placeholder="Seu nome" required autocomplete="on" autofocus maxlength="30" size="20"><br>
+
+                <label for="apelido">Apelido:</label>
+                <input type="text" name="apelido" id="apelido" placeholder="Seu apelido" required autocomplete="on" maxlength="30" size="20"><br>
+
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" placeholder="seu@email.com" required autocomplete="on"><br>
+            </fieldset>
+
+            <!-- Quizz sobre a cidade -->
+            <fieldset>
+                <legend>Quizz sobre São Francisco</legend>
+
+                <label for="data">Quando foi fundada a cidade de São Francisco?</label>
+                <input type="date" name="data" id="data" required><br>
+
+                <label for="hora">A que horas você gostaria de visitar São Francisco?</label>
+                <input type="time" name="hora" id="hora" required><br>
+
+                <label>Qual é o seu lugar favorito em São Francisco?</label><br>
+                <input type="radio" name="lugar" id="golden_gate" value="Golden Gate" required>
+                <label for="golden_gate">Ponte Golden Gate</label><br>
+                <input type="radio" name="lugar" id="alcatraz" value="Alcatraz">
+                <label for="alcatraz">Ilha de Alcatraz</label><br>
+                <input type="radio" name="lugar" id="pier39" value="Pier 39">
+                <label for="pier39">Pier 39</label><br>
+
+                <label>Você já visitou São Francisco?</label>
+                <input type="checkbox" name="visitou" id="visitou" value="sim">
+                <label for="visitou">Sim</label><br>
+
+                <label for="sugestoes">Sugestões para visitantes:</label><br>
+                <textarea id="sugestoes" name="sugestoes" rows="4" cols="50" placeholder="Suas sugestões..."></textarea><br>
+
+                <label for="cor_favorita">Selecione sua cor favorita:</label>
+                <input type="color" name="cor_favorita" id="cor_favorita" value="#ff0000"><br>
+
+                <label for="quantidade">Quantas vezes você já visitou São Francisco?</label>
+                <input type="number" name="quantidade" id="quantidade" min="0" max="10" step="1" required><br>
+
+                <label for="distancia">Qual a distância até São Francisco?</label>
+                <input type="range" name="distancia" id="distancia" min="1" max="100" value="50" step="1"><br>
+
+                <label for="imagem">Escolha uma imagem representativa:</label>
+                <input type="image" src="sua_imagem.jpg" alt="Imagem de São Francisco"><br>
+
+                <input type="reset" value="Limpar">
+            </fieldset>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </main>
+
+    <footer>
+        <p>DIW 2024</p>
+    </footer>
+</body>
+</html>
