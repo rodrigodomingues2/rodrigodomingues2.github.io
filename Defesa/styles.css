@@ -42,15 +42,15 @@ h1 {
 }
 
 .interface-web {
-    background-color: white; /* Fundo branco para a seção Interfaces Web */
+    background-color: white; 
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px; /* Espaçamento entre a interface web e a introdução */
+    margin-bottom: 20px; 
 }
 
 .introducao {
-    background-color: white; /* Fundo branco para a seção de Introdução */
+    background-color: white; 
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
