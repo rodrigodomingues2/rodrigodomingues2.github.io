@@ -1,3 +1,4 @@
+/* Layout básico */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,75 +6,70 @@ body {
     background-color: #f0f0f0;
 }
 
+.container {
+    max-width: 1200px; /* Centraliza a página */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header (Nome centralizado no retângulo) */
 header {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 150px; 
+    height: 150px; /* Altura ajustada para o nome centralizado */
     background-color: #f8f8f8;
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 2.5rem; /* Aumenta o tamanho da fonte */
     background-color: white;
-    padding: 10px 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    padding: 20px 50px; /* Espaçamento interno */
+    border-radius: 15px; /* Bordas arredondadas */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); /* Sombra */
     margin: 0;
+    text-align: center;
 }
 
+/* Layout das colunas */
 .content {
     display: flex;
-    justify-content: space-around;
-    margin: 20px;
-    flex-wrap: wrap; 
+    justify-content: space-between;
+    margin-top: 40px;
 }
 
 .left-column, .right-column {
-    flex: 1;
-    padding: 20px;
-}
-
-.left-column {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    width: 45%;
-    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 48%; /* Largura ajustada para caber lado a lado */
 }
 
 .right-column {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    width: 45%;
-    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.labs {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+/* Estilização dos links dos laboratórios */
+.labs ul {
+    list-style: none;
+    padding: 0;
 }
 
 .labs li {
-    list-style: none;
-    margin: 10px;
+    margin: 15px 0;
 }
 
 .labs a {
     text-decoration: none;
     background-color: #ddd;
-    padding: 10px 20px;
+    padding: 10px 30px;
     border-radius: 5px;
-    font-size: 1rem;
     color: black;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: inline-block;
-    width: 80px;
     text-align: center;
 }
 
@@ -82,10 +78,11 @@ h1 {
     color: white;
 }
 
+/* Footer */
 footer {
     text-align: center;
     padding: 20px;
     background-color: #f8f8f8;
-    margin-top: 20px;
+    margin-top: 40px;
     font-size: 0.9rem;
 }
