@@ -11,9 +11,9 @@ function mudaTextoSair() {
     passaPorAqui.textContent = "1. Passa por aqui!";
 }
 
-// Função para mudar a cor do texto
-function changeColor(color) {
-    passaPorAqui.style.color = color;
+// Função para mudar a cor do texto ao clicar em um botão de cor
+function mudaCor(cor) {
+    passaPorAqui.style.color = cor;
 }
 
 // Função para lidar com a escolha de cor em inglês
@@ -28,22 +28,28 @@ function submeterCor() {
 }
 
 // Função para contar
-function count() {
+function contar() {
     counter++;
     document.querySelector("#count-display").textContent = counter; // Atualiza o contador exibido
 }
 
-// Adicionando eventos para passar e sair do rato
-passaPorAqui.addEventListener("mouseenter", mudaTextoPassar);
-passaPorAqui.addEventListener("mouseleave", mudaTextoSair);
+// Associando os eventos usando funções dedicadas
+function inicializarEventos() {
+    // Adicionando eventos para passar e sair do rato
+    passaPorAqui.addEventListener("mouseenter", mudaTextoPassar);
+    passaPorAqui.addEventListener("mouseleave", mudaTextoSair);
 
-// Adicionando evento para o botão de submeter usando onclick
-document.querySelector("#submit-button").onclick = submeterCor;
+    // Adicionando evento para o botão de submeter usando onclick
+    document.querySelector("#submit-button").onclick = submeterCor;
 
-// Adicionando evento para o botão de contagem usando onclick
-document.querySelector("#count-button").onclick = count;
+    // Adicionando evento para o botão de contagem usando onclick
+    document.querySelector("#count-button").onclick = contar;
 
-// Usando onclick para os botões de cor
-document.querySelector("#red-button").onclick = function() { changeColor('red'); };
-document.querySelector("#green-button").onclick = function() { changeColor('green'); };
-document.querySelector("#blue-button").onclick = function() { changeColor('blue'); };
+    // Usando onclick para os botões de cor
+    document.querySelector("#red-button").onclick = function() { mudaCor('red'); };
+    document.querySelector("#green-button").onclick = function() { mudaCor('green'); };
+    document.querySelector("#blue-button").onclick = function() { mudaCor('blue'); };
+}
+
+// Inicializa os eventos ao carregar a página
+inicializarEventos();
