@@ -1,6 +1,13 @@
 let counter = 0;
 const heading = document.querySelector('h1'); // P 1 VEZ
 const button = document.getElementById("button");
+const countButton = document.getElementById("count-button");
+const countDisplay = document.getElementById("count-display");
+
+countButton.addEventListener("click", function() {
+    counter++;
+    countDisplay.textContent = counter;
+});
 
 // Event listener para o botão
 button.addEventListener("click", function() {
