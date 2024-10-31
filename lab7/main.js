@@ -1,4 +1,5 @@
 const passaPorAqui = document.querySelector("#passa-por-aqui");
+let counter = 0; // Inicializa o contador
 
 // Função para mudar o texto ao passar o rato
 function mudaTextoPassar() {
@@ -26,10 +27,23 @@ function submeterCor() {
     }
 }
 
+// Função para contar
+function count() {
+    counter++;
+    document.querySelector("#count-display").textContent = counter; // Atualiza o contador exibido
+}
+
 // Adicionando eventos para passar e sair do rato
 passaPorAqui.addEventListener("mouseenter", mudaTextoPassar);
 passaPorAqui.addEventListener("mouseleave", mudaTextoSair);
 
-// Adicionando evento para o botão de submeter
-const submitButton = document.querySelector("#submit-button");
-submitButton.addEventListener("click", submeterCor);
+// Adicionando evento para o botão de submeter usando onclick
+document.querySelector("#submit-button").onclick = submeterCor;
+
+// Adicionando evento para o botão de contagem usando onclick
+document.querySelector("#count-button").onclick = count;
+
+// Usando onclick para os botões de cor
+document.querySelector("#red-button").onclick = function() { changeColor('red'); };
+document.querySelector("#green-button").onclick = function() { changeColor('green'); };
+document.querySelector("#blue-button").onclick = function() { changeColor('blue'); };
