@@ -1,46 +1,35 @@
-let counter = 0;
-const heading = document.querySelector('h1');
-const passaPorAqui = document.getElementById("passa-por-aqui");
-const countDisplay = document.getElementById("count-display");
-const submitButton = document.getElementById("submit-button");
-const colorInput = document.getElementById("color-input");
+const passaPorAqui = document.querySelector("#passa-por-aqui");
 
-// Função para contar
-function count() {
-    counter++;
-    countDisplay.textContent = counter;
+// Função para mudar o texto ao passar o rato
+function mudaTextoPassar() {
+    passaPorAqui.textContent = "Obrigado por passares!";
 }
 
-// Associar evento no HTML
-// (Isso já está feito diretamente no HTML com onclick)
-
-const countButton = document.getElementById("count-button");
-// Associar evento no script com propriedade de evento
-countButton.onclick = count;
-
-// Associar evento no script usando addEventListener
-countButton.addEventListener('click', count);
-
-// Adiciona evento para mudar o texto ao passar o rato
-passaPorAqui.addEventListener("mouseenter", function() {
-    passaPorAqui.textContent = "Obrigado por passares!";
-});
-
-passaPorAqui.addEventListener("mouseleave", function() {
+// Função para restaurar o texto ao retirar o rato
+function mudaTextoSair() {
     passaPorAqui.textContent = "1. Passa por aqui!";
-});
+}
 
-// Mudar a cor do texto ao clicar nos botões de cor
+// Função para mudar a cor do texto
 function changeColor(color) {
     passaPorAqui.style.color = color;
 }
 
-// Lidar com a escolha de cor em inglês
-submitButton.addEventListener("click", function() {
+// Função para lidar com a escolha de cor em inglês
+function submeterCor() {
+    const colorInput = document.querySelector("#color-input");
     const chosenColor = colorInput.value.toLowerCase();
     if (chosenColor === "red" || chosenColor === "green" || chosenColor === "blue") {
         passaPorAqui.style.color = chosenColor;
     } else {
         alert("Por favor, escolha 'red', 'green' ou 'blue'.");
     }
-});
+}
+
+// Adicionando eventos para passar e sair do rato
+passaPorAqui.addEventListener("mouseenter", mudaTextoPassar);
+passaPorAqui.addEventListener("mouseleave", mudaTextoSair);
+
+// Adicionando evento para o botão de submeter
+const submitButton = document.querySelector("#submit-button");
+submitButton.addEventListener("click", submeterCor);
