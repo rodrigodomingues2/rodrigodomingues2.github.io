@@ -1,54 +1,61 @@
+// Seletores de elementos
 const passaPorAqui = document.querySelector("#passa-por-aqui");
+const countDisplay = document.querySelector("#count-display");
+const colorInput = document.querySelector("#color-input");
+const submitButton = document.querySelector("#submit-button");
+const inputText = document.querySelector("#input-text");
 let counter = 0; // Inicializa o contador
 
-// Função para mudar o texto ao passar o rato
+// Função 1: Mudar o texto ao passar e sair o rato
 function mudaTextoPassar() {
     passaPorAqui.textContent = "Obrigado por passares!";
 }
 
-// Função para restaurar o texto ao retirar o rato
 function mudaTextoSair() {
     passaPorAqui.textContent = "1. Passa por aqui!";
 }
 
-// Função para mudar a cor do texto ao clicar em um botão de cor
+// Função 2: Mudar a cor do texto ao clicar nos botões de cor
 function mudaCor(cor) {
     passaPorAqui.style.color = cor;
 }
 
-// Função para lidar com a escolha de cor em inglês
-function submeterCor() {
-    const colorInput = document.querySelector("#color-input");
-    const chosenColor = colorInput.value.toLowerCase();
-    if (chosenColor === "red" || chosenColor === "green" || chosenColor === "blue") {
-        passaPorAqui.style.color = chosenColor;
-    } else {
-        alert("Por favor, escolha 'red', 'green' ou 'blue'.");
-    }
+// Função 3: Mudar a cor de fundo do campo de texto enquanto escreve
+function mudaCorInput() {
+    inputText.style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16); // Gera uma cor aleatória
 }
 
-// Função para contar
+// Função 4: Aplicar a cor escolhida no campo de entrada de cor ao fundo da página
+function submeterCor() {
+    const chosenColor = colorInput.value.toLowerCase();
+    document.body.style.backgroundColor = chosenColor;
+}
+
+// Função 5: Contador ao clicar no botão "Conta!"
 function contar() {
     counter++;
-    document.querySelector("#count-display").textContent = counter; // Atualiza o contador exibido
+    countDisplay.textContent = counter; // Atualiza o contador exibido
 }
 
 // Associando os eventos usando funções dedicadas
 function inicializarEventos() {
-    // Adicionando eventos para passar e sair do rato
+    // Evento para passar e sair o rato na primeira funcionalidade
     passaPorAqui.addEventListener("mouseenter", mudaTextoPassar);
     passaPorAqui.addEventListener("mouseleave", mudaTextoSair);
 
-    // Adicionando evento para o botão de submeter usando onclick
-    document.querySelector("#submit-button").onclick = submeterCor;
+    // Eventos para mudar a cor do texto
+    document.querySelector("#red-button").onclick = () => mudaCor('red');
+    document.querySelector("#green-button").onclick = () => mudaCor('green');
+    document.querySelector("#blue-button").onclick = () => mudaCor('blue');
 
-    // Adicionando evento para o botão de contagem usando onclick
+    // Evento para mudar a cor de fundo do input enquanto escreve
+    inputText.addEventListener("input", mudaCorInput);
+
+    // Evento para aplicar a cor escolhida ao fundo da página
+    submitButton.onclick = submeterCor;
+
+    // Evento para incrementar o contador
     document.querySelector("#count-button").onclick = contar;
-
-    // Usando onclick para os botões de cor
-    document.querySelector("#red-button").onclick = function() { mudaCor('red'); };
-    document.querySelector("#green-button").onclick = function() { mudaCor('green'); };
-    document.querySelector("#blue-button").onclick = function() { mudaCor('blue'); };
 }
 
 // Inicializa os eventos ao carregar a página
