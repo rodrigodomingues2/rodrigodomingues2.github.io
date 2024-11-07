@@ -1,5 +1,3 @@
-console.log("JavaScript carregado com sucesso");
-
 // Seletores de elementos
 const passaPorAqui = document.querySelector("#passa-por-aqui");
 const countDisplay = document.querySelector("#count-display");
@@ -24,7 +22,7 @@ function mudaCor(cor) {
 
 // Função 3: Mudar a cor de fundo do campo de texto enquanto escreve
 function mudaCorInput() {
-    inputText.style.backgroundColor = "#" + Math.floor(Math.random() * 16777215).toString(16); // Gera uma cor aleatória
+    inputText.style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16); // Gera uma cor aleatória
 }
 
 // Função 4: Aplicar a cor escolhida no campo de entrada de cor ao fundo da página
@@ -41,30 +39,24 @@ function contar() {
 
 // Associando os eventos usando funções dedicadas
 function inicializarEventos() {
-    // Verifica se todos os elementos necessários estão presentes
-    if (!passaPorAqui || !countDisplay || !colorInput || !submitButton || !inputText) {
-        console.error("Alguns elementos não foram encontrados na página. Verifique o HTML.");
-        return;
-    }
-
     // Evento para passar e sair o rato na primeira funcionalidade
     passaPorAqui.addEventListener("mouseenter", mudaTextoPassar);
     passaPorAqui.addEventListener("mouseleave", mudaTextoSair);
 
     // Eventos para mudar a cor do texto
-    document.querySelector("#red-button").onclick = () => mudaCor('red');
-    document.querySelector("#green-button").onclick = () => mudaCor('green');
-    document.querySelector("#blue-button").onclick = () => mudaCor('blue');
+    document.querySelector("#red-button").addEventListener("click", () => mudaCor('red'));
+    document.querySelector("#green-button").addEventListener("click", () => mudaCor('green'));
+    document.querySelector("#blue-button").addEventListener("click", () => mudaCor('blue'));
 
     // Evento para mudar a cor de fundo do input enquanto escreve
     inputText.addEventListener("input", mudaCorInput);
 
     // Evento para aplicar a cor escolhida ao fundo da página
-    submitButton.onclick = submeterCor;
+    submitButton.addEventListener("click", submeterCor);
 
     // Evento para incrementar o contador
-    document.querySelector("#count-button").onclick = contar;
+    document.querySelector("#count-button").addEventListener("click", contar);
 }
 
 // Inicializa os eventos ao carregar a página
-document.addEventListener("DOMContentLoaded", inicializarEventos);
+inicializarEventos();
