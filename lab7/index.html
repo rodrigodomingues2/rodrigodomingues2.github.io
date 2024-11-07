@@ -1,36 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interação com Eventos</title>
-    <style>
-        body {
-            background-color: #e6e6fa;
-        }
-        button {
-            margin: 5px;
-        }
-    </style>
+
+    <title>Lab</title>
 </head>
 <body>
-    <h1>Interação com Eventos</h1>
-    <p id="passa-por-aqui">1. Passa por aqui!</p>
-    
-    <p>2. Pinta-me! 
-        <button id="red-button">Red</button>
-        <button id="green-button">Green</button>
-        <button id="blue-button">Blue</button>
-    </p>
-    
-    <p>3. Experimenta escrever... <input type="text" id="input-text" /></p>
-    
-    <p>4. Escolha uma cor em inglês: <input type="text" id="color-input" /> 
-        <button id="submit-button">Submeter</button>
-    </p>
-    
-    <p>5. <button id="count-button">Conta!</button> <span id="count-display">0</span></p>
 
-    <script src="scripts/main.js"></script>
+    <div class="container">
+        <div class="section">
+            <h2 id="h2mudatexto" onmouseout="restauraTexto()"  onmouseover="muda_texto()">1. Passa por aqui!</h2>
+
+        </div>
+
+        <div class="section">
+            <h2>2. <span id="colorDisplay">Pinta-me!</span></h2>
+            <div class="color-buttons">
+                <button onclick="changeColor('red')">Red</button>
+                <button onclick="changeColor('green')">Green</button>
+                <button onclick="changeColor('blue')">Blue</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>3. Experimenta escrever...</h2>
+            <input type="text" id="textInput" placeholder="Escreva algo...">
+        </div>
+
+        <div class="section">
+            <h2>4. Escolha uma cor em inglês:</h2>
+            <input type="text" id="colorInput" placeholder="Exemplo: Red">
+            <button onclick="submitColor()">submeter</button>
+        </div>
+
+        <div class="section">
+            <h2>5.<br><button onclick="incrementCounter()">Conta</button> <span id="counter">0</span></h2>
+
+        </div>
+    </div>
+
+    <script src="main.js"></script>
 </body>
+
 </html>

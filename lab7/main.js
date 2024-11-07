@@ -1,62 +1,38 @@
-// Seletores de elementos
-const passaPorAqui = document.querySelector("#passa-por-aqui");
-const countDisplay = document.querySelector("#count-display");
-const colorInput = document.querySelector("#color-input");
-const submitButton = document.querySelector("#submit-button");
-const inputText = document.querySelector("#input-text");
-let counter = 0; // Inicializa o contador
+function muda_texto(){
+     document.querySelector("#h2mudatexto").textContent = "Adeus!"
 
-// Função 1: Mudar o texto ao passar e sair o rato
-function mudaTextoPassar() {
-    passaPorAqui.textContent = "Obrigado por passares!";
+}
+function restauraTexto() {
+    document.querySelector("#h2mudatexto").textContent = "1. Passa por aqui!";
 }
 
-function mudaTextoSair() {
-    passaPorAqui.textContent = "1. Passa por aqui!";
+function changeColor(color) {
+    // Muda a cor do texto "Pinta-me!" de acordo com o botão clicado
+    document.querySelector("#colorDisplay").style.color = color;
 }
 
-// Função 2: Mudar a cor do texto ao clicar nos botões de cor
-function mudaCor(cor) {
-    passaPorAqui.style.color = cor;
+function submitColor() {
+    const color = document.getElementById("colorInput").value.toLowerCase();
+    const validColors = ["red", "green", "blue"];
+    if (validColors.includes(color)) {
+        // Muda a cor de fundo da página para a cor inserida
+        document.body.style.backgroundColor = color;
+    } else {
+        alert("Cor inválida! Escolha entre red, green, ou blue.");
+    }
 }
 
-// Função 3: Mudar a cor de fundo do campo de texto enquanto escreve
-function mudaCorInput() {
-    inputText.style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16); // Gera uma cor aleatória
+function alternateTextColor() {
+    const colors = ["yellow", "red", "blue"];
+        let colorIndex = 0;
+    const textInput = document.getElementById("textInput");
+    textInput.style.color = colors[colorIndex];
+    colorIndex = (colorIndex + 1) % colors.length;
 }
+let clickCount = 0;
 
-// Função 4: Aplicar a cor escolhida no campo de entrada de cor ao fundo da página
-function submeterCor() {
-    const chosenColor = colorInput.value.toLowerCase();
-    document.body.style.backgroundColor = chosenColor;
+// Função para incrementar o contador e atualizar o display
+function incrementCounter() {
+    clickCount++;
+    document.getElementById("counter").textContent = clickCount;
 }
-
-// Função 5: Contador ao clicar no botão "Conta!"
-function contar() {
-    counter++;
-    countDisplay.textContent = counter; // Atualiza o contador exibido
-}
-
-// Associando os eventos usando funções dedicadas
-function inicializarEventos() {
-    // Evento para passar e sair o rato na primeira funcionalidade
-    passaPorAqui.addEventListener("mouseenter", mudaTextoPassar);
-    passaPorAqui.addEventListener("mouseleave", mudaTextoSair);
-
-    // Eventos para mudar a cor do texto
-    document.querySelector("#red-button").addEventListener("click", () => mudaCor('red'));
-    document.querySelector("#green-button").addEventListener("click", () => mudaCor('green'));
-    document.querySelector("#blue-button").addEventListener("click", () => mudaCor('blue'));
-
-    // Evento para mudar a cor de fundo do input enquanto escreve
-    inputText.addEventListener("input", mudaCorInput);
-
-    // Evento para aplicar a cor escolhida ao fundo da página
-    submitButton.addEventListener("click", submeterCor);
-
-    // Evento para incrementar o contador
-    document.querySelector("#count-button").addEventListener("click", contar);
-}
-
-// Inicializa os eventos ao carregar a página
-inicializarEventos();
