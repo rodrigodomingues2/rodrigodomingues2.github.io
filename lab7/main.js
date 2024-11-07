@@ -1,3 +1,5 @@
+console.log("JavaScript carregado com sucesso");
+
 // Seletores de elementos
 const passaPorAqui = document.querySelector("#passa-por-aqui");
 const countDisplay = document.querySelector("#count-display");
@@ -22,7 +24,7 @@ function mudaCor(cor) {
 
 // Função 3: Mudar a cor de fundo do campo de texto enquanto escreve
 function mudaCorInput() {
-    inputText.style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16); // Gera uma cor aleatória
+    inputText.style.backgroundColor = "#" + Math.floor(Math.random() * 16777215).toString(16); // Gera uma cor aleatória
 }
 
 // Função 4: Aplicar a cor escolhida no campo de entrada de cor ao fundo da página
@@ -39,6 +41,12 @@ function contar() {
 
 // Associando os eventos usando funções dedicadas
 function inicializarEventos() {
+    // Verifica se todos os elementos necessários estão presentes
+    if (!passaPorAqui || !countDisplay || !colorInput || !submitButton || !inputText) {
+        console.error("Alguns elementos não foram encontrados na página. Verifique o HTML.");
+        return;
+    }
+
     // Evento para passar e sair o rato na primeira funcionalidade
     passaPorAqui.addEventListener("mouseenter", mudaTextoPassar);
     passaPorAqui.addEventListener("mouseleave", mudaTextoSair);
@@ -59,4 +67,4 @@ function inicializarEventos() {
 }
 
 // Inicializa os eventos ao carregar a página
-inicializarEventos();
+document.addEventListener("DOMContentLoaded", inicializarEventos);
