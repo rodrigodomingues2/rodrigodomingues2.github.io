@@ -9,37 +9,42 @@
 <body>
     <h1>Lista de Produtos</h1>
 
-    <!-- Aqui será exibida a lista de produtos (caso queira adicionar no HTML mais tarde) -->
+    <!-- Div para exibir a lista de produtos -->
     <div id="produtos-container"></div>
 
     <!-- Importando o script com os dados dos produtos -->
     <script src="produtos.js"></script>
 
-    <!-- Script principal -->
+    <!-- Script principal para exibir os produtos na página -->
     <script>
-        // Acessando os dados dos produtos no console
-        console.log(produtos); // Exibe o array completo de produtos no console
+        // Seleciona o contêiner onde os produtos serão exibidos
+        const container = document.getElementById('produtos-container');
 
-        // Exemplo de como acessar o primeiro produto
-        const primeiroProduto = produtos[0];
-        console.log(primeiroProduto); // Exibe o primeiro produto
+        // Função para exibir produtos
+        function exibirProdutos(produtos) {
+            // Itera sobre cada produto no array de produtos
+            produtos.forEach(produto => {
+                // Cria um elemento div para cada produto
+                const produtoDiv = document.createElement('div');
+                produtoDiv.classList.add('produto'); // Adiciona uma classe para estilização
 
-        // Exemplo de como acessar atributos individuais
-        console.log("ID do Produto:", primeiroProduto.id); // Exibe o ID
-        console.log("Título do Produto:", primeiroProduto.title); // Exibe o título
-        console.log("URL da Imagem do Produto:", primeiroProduto.image); // Exibe a URL da imagem
+                // Adiciona o conteúdo do produto na div
+                produtoDiv.innerHTML = `
+                    <img src="${produto.image}" alt="${produto.title}" class="produto-imagem">
+                    <h2>${produto.title}</h2>
+                    <p><strong>Preço:</strong> $${produto.price}</p>
+                    <p><strong>Descrição:</strong> ${produto.description}</p>
+                    <p><strong>Categoria:</strong> ${produto.category}</p>
+                    <p><strong>Avaliação:</strong> ${produto.rating.rate} (${produto.rating.count} avaliações)</p>
+                `;
 
-        // Mostra um produto no console de forma completa
-        produtos.forEach((produto, index) => {
-            console.log(`Produto ${index + 1}:`);
-            console.log(`Título: ${produto.title}`);
-            console.log(`Preço: $${produto.price}`);
-            console.log(`Descrição: ${produto.description}`);
-            console.log(`Categoria: ${produto.category}`);
-            console.log(`Imagem: ${produto.image}`);
-            console.log(`Avaliação: ${produto.rating.rate} (${produto.rating.count} avaliações)`);
-            console.log("----------");
-        });
+                // Adiciona a div do produto ao contêiner
+                container.appendChild(produtoDiv);
+            });
+        }
+
+        // Chama a função para exibir os produtos na página
+        exibirProdutos(produtos);
     </script>
 </body>
 </html>
