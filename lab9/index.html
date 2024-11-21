@@ -3,48 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Produtos</title>
+    <title>Minha Loja Online</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Lista de Produtos</h1>
+    <header>
+        <h1>Minha Loja Online</h1>
+        <p>Bem-vindo à melhor loja de produtos online!</p>
+    </header>
 
-    <!-- Div para exibir a lista de produtos -->
-    <div id="produtos-container"></div>
+    <main>
+        <section id="product-list">
+            <h2>Produtos Disponíveis</h2>
+            <div id="products-container" class="product-container">
+                <!-- Os produtos serão renderizados aqui dinamicamente -->
+            </div>
+        </section>
 
-    <!-- Importando o script com os dados dos produtos -->
+        <section id="cart">
+            <h2>Cesto de Compras</h2>
+            <ul id="cart-items" class="cart-items">
+                <!-- Itens adicionados ao cesto serão exibidos aqui -->
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Minha Loja Online - Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Importar os scripts -->
     <script src="main.js"></script>
-
-    <!-- Script principal para exibir os produtos na página -->
-    <script>
-        // Seleciona o contêiner onde os produtos serão exibidos
-        const container = document.getElementById('produtos-container');
-
-        // Função para exibir produtos
-        function exibirProdutos(produtos) {
-            // Itera sobre cada produto no array de produtos
-            produtos.forEach(produto => {
-                // Cria um elemento div para cada produto
-                const produtoDiv = document.createElement('div');
-                produtoDiv.classList.add('produto'); // Adiciona uma classe para estilização
-
-                // Adiciona o conteúdo do produto na div
-                produtoDiv.innerHTML = `
-                    <img src="${produto.image}" alt="${produto.title}" class="produto-imagem">
-                    <h2>${produto.title}</h2>
-                    <p><strong>Preço:</strong> $${produto.price}</p>
-                    <p><strong>Descrição:</strong> ${produto.description}</p>
-                    <p><strong>Categoria:</strong> ${produto.category}</p>
-                    <p><strong>Avaliação:</strong> ${produto.rating.rate} (${produto.rating.count} avaliações)</p>
-                `;
-
-                // Adiciona a div do produto ao contêiner
-                container.appendChild(produtoDiv);
-            });
-        }
-
-        // Chama a função para exibir os produtos na página
-        exibirProdutos(produtos);
-    </script>
 </body>
 </html>

@@ -1,89 +1,52 @@
-/* Estilos básicos */
+/* Estilo global */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f9f9f9;
     color: #333;
 }
 
-/* Cabeçalho e navegação */
+/* Cabeçalho */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
     text-align: center;
 }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
+header h1 {
+    margin: 0;
 }
 
-nav ul li {
-    margin: 0 15px;
+header p {
+    font-size: 1.2em;
 }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-/* Layout principal para produtos e cesto */
+/* Layout principal */
 main {
     display: flex;
-    justify-content: space-around;
-    margin: 20px;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
 }
 
-/* Seção dos produtos */
 #product-list {
-    width: 60%;
+    width: 65%;
 }
 
-#product-list h2 {
-    text-align: center;
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.product-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-}
-
-/* Estilo para cada produto */
-.product {
-    width: 200px;
-    border: 1px solid #ddd;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 5px;
-    text-align: center;
-}
-
-.product img {
-    width: 100%;
-    height: auto;
-}
-
-/* Cesto de compras */
 #cart {
     width: 30%;
-}
-
-#cart h2 {
-    text-align: center;
-    font-size: 1.5em;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .cart-items {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .cart-item {
@@ -91,11 +54,66 @@ main {
     border-bottom: 1px solid #ddd;
 }
 
+/* Produtos */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.product {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 250px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product img {
+    max-width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+.product h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.product p {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.product .preco {
+    font-size: 1em;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.product button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.product button:hover {
+    background-color: #45a049;
+}
+
 /* Rodapé */
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #4CAF50;
+    color: white;
     text-align: center;
     padding: 10px 0;
-    margin-top: 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
