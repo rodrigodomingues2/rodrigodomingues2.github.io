@@ -1,47 +1,71 @@
-// Certifique-se de que o script está carregando após o carregamento do DOM
-document.addEventListener('DOMContentLoaded', function() {
-    // Verifica se o array 'produtos' está disponível no escopo global
-    if (typeof produtos !== 'undefined' && Array.isArray(produtos)) {
-        exibirProdutos();
-    } else {
-        console.error('A variável "produtos" não foi encontrada ou não é um array.');
+document.addEventListener('DOMContentLoaded', function () {
+    const produtosLista = document.querySelector('.produtos-lista');
+    const cesto = document.querySelector('.cesto-items');
+    
+    // Exemplo de dados dos produtos
+    const produtos = [
+        {
+            id: 1,
+            nome: 'Produto 1',
+            imagem: 'imagem1.jpg',
+            preco: 'R$ 19,99',
+            descricao: 'Descrição do Produto 1',
+        },
+        {
+            id: 2,
+            nome: 'Produto 2',
+            imagem: 'imagem2.jpg',
+            preco: 'R$ 29,99',
+            descricao: 'Descrição do Produto 2',
+        },
+        {
+            id: 3,
+            nome: 'Produto 3',
+            imagem: 'imagem3.jpg',
+            preco: 'R$ 39,99',
+            descricao: 'Descrição do Produto 3',
+        },
+        // Adicione mais produtos conforme necessário...
+    ];
+
+    // Função para adicionar os produtos à lista
+    function exibirProdutos(produtos) {
+        produtos.forEach(produto => {
+            const produtoElemento = document.createElement('div');
+            produtoElemento.classList.add('produto');
+            
+            produtoElemento.innerHTML = `
+                <img src="${produto.imagem}" alt="${produto.nome}">
+                <div class="produto-info">
+                    <h2>${produto.nome}</h2>
+                    <p>${produto.descricao}</p>
+                    <p class="preco">${produto.preco}</p>
+                    <button class="adicionar-cesto" data-id="${produto.id}">Adicionar ao Cesto</button>
+                </div>
+            `;
+
+            // Adiciona o produto à lista de produtos
+            produtosLista.appendChild(produtoElemento);
+        });
     }
+
+    // Função para adicionar o produto ao cesto
+    function adicionarAoCesto(event) {
+        if (event.target.classList.contains('adicionar-cesto')) {
+            const idProduto = event.target.getAttribute('data-id');
+            const produtoSelecionado = produtos.find(produto => produto.id == idProduto);
+
+            if (produtoSelecionado) {
+                const cestoItem = document.createElement('li');
+                cestoItem.textContent = `${produtoSelecionado.nome} - ${produtoSelecionado.preco}`;
+                cesto.appendChild(cestoItem);
+            }
+        }
+    }
+
+    // Adiciona os produtos à página ao carregar
+    exibirProdutos(produtos);
+
+    // Evento para adicionar ao cesto
+    produtosLista.addEventListener('click', adicionarAoCesto);
 });
-
-// Função para exibir os produtos na página
-function exibirProdutos() {
-    const containerProdutos = document.getElementById('produtos');
-
-    // Limpa qualquer conteúdo anterior no contêiner
-    containerProdutos.innerHTML = '';
-
-    // Loop para adicionar cada produto ao HTML
-    produtos.forEach(produto => {
-        const produtoDiv = document.createElement('div');
-        produtoDiv.classList.add('produto'); // Adiciona uma classe para estilização
-
-        const imagem = document.createElement('img');
-        imagem.src = produto.image;
-        imagem.alt = produto.title;
-        produtoDiv.appendChild(imagem);
-
-        const titulo = document.createElement('h3');
-        titulo.textContent = produto.title;
-        produtoDiv.appendChild(titulo);
-
-        const descricao = document.createElement('p');
-        descricao.textContent = produto.description;
-        produtoDiv.appendChild(descricao);
-
-        const preco = document.createElement('p');
-        preco.textContent = `R$ ${produto.price.toFixed(2)}`;
-        produtoDiv.appendChild(preco);
-
-        const categoria = document.createElement('p');
-        categoria.textContent = produto.category;
-        produtoDiv.appendChild(categoria);
-
-        // Adiciona o produto à seção de produtos
-        containerProdutos.appendChild(produtoDiv);
-    });
-}
