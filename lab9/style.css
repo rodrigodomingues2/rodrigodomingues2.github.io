@@ -5,7 +5,6 @@
     box-sizing: border-box;
 }
 
-/* Estilos gerais para o corpo */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -13,7 +12,6 @@ body {
     padding: 20px;
 }
 
-/* Estilo do header */
 header {
     text-align: center;
     margin-bottom: 20px;
@@ -24,44 +22,56 @@ h1 {
     color: #333;
 }
 
-/* Container para a lista de produtos */
+/* Título de seleção de produtos */
+.titulo-produtos {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
 .produtos-lista {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajuste automático das colunas */
+    grid-template-columns: repeat(3, 1fr); /* Exibir 3 produtos por linha */
     gap: 20px;
     padding: 0 10px;
 }
 
-/* Estilo para cada produto */
+/* Estilo do produto */
 .produto {
     background-color: white;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease; /* Animação no hover */
+    transition: transform 0.3s ease;
+    text-align: center; /* Centraliza o conteúdo dentro de cada produto */
 }
 
-/* Efeito de zoom ao passar o mouse sobre o produto */
 .produto:hover {
     transform: scale(1.05);
 }
 
-/* Estilo da imagem do produto */
+/* Ajustar as imagens para caberem nas colunas */
 .produto img {
     width: 100%;
     height: auto;
+    max-height: 250px; /* Ajusta o tamanho da imagem */
+    object-fit: cover; /* Garante que a imagem seja ajustada sem distorcer */
 }
 
-/* Informações do produto (titulo, descrição, preço, etc) */
+/* Estilo da informação do produto */
 .produto-info {
     padding: 15px;
 }
 
+/* Estilo do nome do produto */
 .produto-info h2 {
-    font-size: 1.5em;
+    font-size: 1.2em;
     margin-bottom: 10px;
 }
 
+/* Estilo da descrição do produto */
 .produto-info p {
     font-size: 1em;
     margin-bottom: 10px;
@@ -71,17 +81,46 @@ h1 {
 .produto-info .preco {
     font-size: 1.2em;
     font-weight: bold;
-    color: #e67e22; /* Cor alaranjada para chamar atenção */
+    color: #e67e22;
 }
 
-/* Estilo da classificação (rating) do produto */
-.produto-info .rating {
-    margin-top: 10px;
+/* Botão Adicionar ao Cesto */
+.produto-info .adicionar-cesto {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
     font-size: 1em;
-    color: #777;
+    margin-top: 10px;
+    width: 100%; /* Faz o botão ocupar toda a largura disponível */
 }
 
-/* Estilo do footer */
+.produto-info .adicionar-cesto:hover {
+    background-color: #2980b9;
+}
+
+/* Cesto de compras */
+.cesto {
+    margin-top: 50px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cesto h3 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.cesto-items {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
 footer {
     text-align: center;
     margin-top: 40px;
