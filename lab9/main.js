@@ -1,65 +1,29 @@
-// Array de produtos com informações detalhadas
-const produtos = [
-    {
-        nome: "Produto 1",
-        preco: "€10.00",
-        imagem: "https://via.placeholder.com/200x150",
-        descricao: "Descrição do Produto 1.",
-    },
-    {
-        nome: "Produto 2",
-        preco: "€20.00",
-        imagem: "https://via.placeholder.com/200x150",
-        descricao: "Descrição do Produto 2.",
-    },
-    {
-        nome: "Produto 3",
-        preco: "€30.00",
-        imagem: "https://via.placeholder.com/200x150",
-        descricao: "Descrição do Produto 3.",
-    },
-];
-
-// Função para renderizar produtos dinamicamente
-const renderizarProdutos = () => {
-    const container = document.getElementById("products-container");
-    produtos.forEach((produto, index) => {
-        const article = document.createElement("article");
-        article.classList.add("product");
-
-        article.innerHTML = `
-            <img src="${produto.imagem}" alt="Imagem de ${produto.nome}">
-            <h3>${produto.nome}</h3>
-            <p class="descricao">${produto.descricao}</p>
-            <p class="preco">Preço: <strong>${produto.preco}</strong></p>
-            <button onclick="adicionarAoCesto(${index})">Adicionar ao Cesto</button>
+document.addEventListener("DOMContentLoaded", () => {
+    const produtosContainer = document.getElementById('produtos');
+  
+    // Função para exibir os produtos
+    function exibirProdutos(produtos) {
+      produtos.forEach(produto => {
+        const produtoElement = document.createElement('div');
+        produtoElement.classList.add('produto');
+        
+        produtoElement.innerHTML = `
+          <img src="${produto.image}" alt="${produto.title}">
+          <div class="produto-info">
+            <h2>${produto.title}</h2>
+            <p>${produto.description}</p>
+            <p class="preco">R$ ${produto.price.toFixed(2)}</p>
+            <div class="rating">
+              <span>⭐ ${produto.rating.rate}</span> | <span>${produto.rating.count} avaliações</span>
+            </div>
+          </div>
         `;
-
-        container.appendChild(article);
-    });
-};
-
-// Função para adicionar produtos ao cesto
-const adicionarAoCesto = (indiceProduto) => {
-    const produto = produtos[indiceProduto];
-    const cartItems = document.getElementById("cart-items");
-
-    const item = document.createElement("li");
-    item.classList.add("cart-item");
-
-    item.innerHTML = `
-        ${produto.nome} - ${produto.preco}
-        <button class="remove-btn" onclick="removerDoCesto(this)">X</button>
-    `;
-
-    cartItems.appendChild(item);
-};
-
-// Função para remover produtos do cesto
-const removerDoCesto = (botao) => {
-    const item = botao.parentElement; // Encontra o elemento <li> que é o pai do botão
-    item.remove(); // Remove o item do DOM
-};
-
-// Renderizar produtos ao carregar a página
-document.addEventListener("DOMContentLoaded", renderizarProdutos);
+        
+        produtosContainer.appendChild(produtoElement);
+      });
+    }
+  
+    // Exibir todos os produtos
+    exibirProdutos(produtos);
+  });
+  

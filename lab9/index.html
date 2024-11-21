@@ -3,43 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Loja Online</title>
+    <title>Loja Online</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Cabeçalho -->
     <header>
-        <div class="header-left">
-            <h1>Loja</h1>
-        </div>
-        <nav class="header-right">
+        <h1>Loja</h1>
+        <nav>
             <ul>
-                <li><a href="#product-list">Produtos</a></li>
-                <li><a href="#cart">Cesto</a></li>
+                <li><a href="#products-section">Produtos</a></li>
+                <li><a href="#cart-section">Cesto</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section id="product-list">
-            <h2>Produtos Disponíveis</h2>
-            <div id="products-container" class="product-container">
-                <!-- Os produtos serão renderizados aqui dinamicamente -->
-            </div>
+    <!-- Lista de produtos -->
+    <section id="products-section">
+        <h2>Produtos Disponíveis</h2>
+        <section id="products-container">
+            <!-- Os produtos serão renderizados dinamicamente aqui -->
         </section>
+    </section>
 
-        <section id="cart">
-            <h2>Seu Cesto de Compras</h2>
-            <ul id="cart-items" class="cart-items">
-                <!-- Itens adicionados ao cesto serão exibidos aqui -->
-            </ul>
-        </section>
-    </main>
+    <!-- Cesto -->
+    <section id="cart-section">
+        <h2>Cesto</h2>
+        <ul id="cart-items">
+            <!-- Produtos adicionados ao cesto aparecerão aqui -->
+        </ul>
+    </section>
 
+    <!-- Rodapé -->
     <footer>
-        <p>&copy; 2024 Loja Online - Todos os direitos reservados.</p>
+        <p>&copy; 2024 Loja Online. Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Importar os scripts -->
+    <!-- Importando os scripts -->
+    <script src="produtos.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
