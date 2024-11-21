@@ -52,12 +52,12 @@ h1 {
     transform: scale(1.05);
 }
 
-/* Ajustar as imagens para caberem nas colunas */
+/* Ajuste o tamanho da imagem e mantém a proporção correta */
 .produto img {
-    width: 100%;
-    height: auto;
-    max-height: 250px; /* Ajusta o tamanho da imagem */
-    object-fit: cover; /* Garante que a imagem seja ajustada sem distorcer */
+    width: 80%;  /* Define a largura para 80% da largura do container */
+    height: auto; /* Mantém a proporção original da imagem */
+    margin: 15px 0; /* Adiciona espaço entre a imagem e o conteúdo abaixo */
+    object-fit: contain; /* Garante que a imagem se ajuste dentro do seu container */
 }
 
 /* Estilo da informação do produto */
