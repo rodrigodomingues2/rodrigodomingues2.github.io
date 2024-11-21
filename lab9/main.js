@@ -46,8 +46,19 @@ const adicionarAoCesto = (indiceProduto) => {
 
     const item = document.createElement("li");
     item.classList.add("cart-item");
-    item.textContent = `${produto.nome} - ${produto.preco}`;
+
+    item.innerHTML = `
+        ${produto.nome} - ${produto.preco}
+        <button class="remove-btn" onclick="removerDoCesto(this)">X</button>
+    `;
+
     cartItems.appendChild(item);
+};
+
+// Função para remover produtos do cesto
+const removerDoCesto = (botao) => {
+    const item = botao.parentElement; // Encontra o elemento <li> que é o pai do botão
+    item.remove(); // Remove o item do DOM
 };
 
 // Renderizar produtos ao carregar a página
