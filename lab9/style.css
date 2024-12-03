@@ -35,22 +35,17 @@ header nav ul li a {
     font-weight: bold;
 }
 
+/* Container para produtos */
 #produtos {
-    padding: 20px;
-}
-
-#produtos h2 {
-    margin-bottom: 20px;
-}
-
-.produtos-lista {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr); /* Exibe 3 produtos por linha */
+    gap: 16px; /* Espaço entre os produtos */
+    padding: 20px;
     max-width: 1200px;
+    margin: 0 auto;
 }
 
+/* Cada produto */
 .produto {
     background-color: white;
     border-radius: 8px;
@@ -101,27 +96,6 @@ header nav ul li a {
 .produto button:hover {
     background-color: #4a148c;
 }
-/* Estilo para os produtos */
-#produtos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Exibe 3 produtos por linha */
-    gap: 16px; /* Espaço entre os produtos */
-}
-
-#produtos article {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 16px;
-    text-align: center;
-    background-color: #f9f9f9;
-}
-
-#produtos img {
-    width: 100%; /* Ajusta o tamanho da imagem */
-    height: auto;
-    max-height: 150px;
-    object-fit: cover;
-}
 
 /* Estilo para o cesto */
 #cesto {
@@ -130,6 +104,8 @@ header nav ul li a {
     margin-top: 24px;
     border-radius: 8px;
     border: 1px solid #ccc;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 #cesto article {
@@ -152,3 +128,15 @@ header nav ul li a {
     text-align: right;
 }
 
+#cesto button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#cesto button:hover {
+    background-color: #c0392b;
+}
