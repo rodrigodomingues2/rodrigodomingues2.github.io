@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Loja</h1>
+        <nav>
+            <ul>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#cesto">Cesto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção para exibir produtos -->
+   <section id="produtos" style="margin-top: 20px;">
+        <h2>Lista de Produtos</h2>
+    </section>
+
+    <section id="cesto" style="margin-top: 40px;">
+      <h3>Produtos Selecionados</h3>
+        <div id="produtos-selecionados"></div>
+         <p id="preco-total">Preço Total: €0.00</p>
+     </section>
+
+
+    <script src="produtos.js"></script> <!-- Dados -->
+    <script src="main.js"></script> <!-- JavaScript -->
+</body>
+</html>
