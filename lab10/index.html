@@ -17,17 +17,34 @@
         </nav>
     </header>
 
-    <!-- Seção para exibir produtos -->
-   <section id="produtos" style="margin-top: 20px;">
-        <h2>Lista de Produtos</h2>
+    <!-- Seção principal com filtro e produtos -->
+    <section id="produtos">
+        <h2 class="titulo-secao">Selecione os Seus Produtos</h2>
+        <div class="filtro-produtos">
+            <div class="caixa-filtro">
+                <label for="categorias">Filtrar: </label>
+                <select id="categorias">
+                    <option value="all">Todas as Categorias</option>
+                </select>
+                <label for="ordenar">Ordenar: </label>
+                <select id="ordenar">
+                    <option value="asc">Preço Crescente</option>
+                    <option value="desc">Preço Decrescente</option>
+                </select>                
+                <label for="pesquisar">Procurar: </label>
+                <input type="text" id="pesquisar" placeholder="Digite para procurar...">
+                <button id="aplicar-filtro">Aplicar</button>
+            </div>
+        </div>
+        <div id="lista-produtos"></div>
     </section>
 
-    <section id="cesto" style="margin-top: 40px;">
-      <h3>Produtos Selecionados</h3>
+    <!-- Seção do cesto -->
+    <section id="cesto">
+        <h3>Produtos Selecionados</h3>
         <div id="produtos-selecionados"></div>
-         <p id="preco-total">Preço Total: €0.00</p>
-     </section>
-
+        <p id="preco-total">Preço Total: €0.00</p>
+    </section>
 
     <script src="produtos.js"></script> <!-- Dados -->
     <script src="main.js"></script> <!-- JavaScript -->

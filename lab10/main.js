@@ -1,131 +1,138 @@
-// URL da API DEISI Shop
-const API_URL = "https://api.deisishop.com/products"; // Substituir pelo URL correto da API
+const produtos = [];
+const cesto = [];
 
-// Inicializa a aplicação ao carregar a página
-document.addEventListener("DOMContentLoaded", () => {
-    obterProdutos();
-    atualizaCesto();
-});
+function renderProdutos(produtosFiltrados) {
+    const listaProdutos = document.getElementById('lista-produtos');
+    listaProdutos.innerHTML = ''; // Limpar lista antes de renderizar novamente
 
-// Obtem produtos usando AJAX (fetch)
-function obterProdutos() {
-    fetch(API_URL)
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error(`Erro: ${response.statusText}`);
-            }
-            return response.json(); // Converte a resposta para JSON
-        })
-        .then((produtos) => {
-            carregarProdutos(produtos); // Carrega os produtos na página
-        })
-        .catch((error) => {
-            console.error("Erro ao obter os produtos:", error);
+    produtosFiltrados.forEach(produto => {
+        const div = document.createElement('div');
+        div.classList.add('produto');
+
+        div.innerHTML = `
+            <img src="${produto.image}" alt="${produto.title}">
+            <h3>${produto.title}</h3>
+            <p class="preco">€${produto.price.toFixed(2)}</p>
+            <p class="descricao">${produto.description}</p>
+            <button data-id="${produto.id}">Adicionar ao Cesto</button>
+        `;
+
+        listaProdutos.appendChild(div);
+    });
+
+    // Adicionar o evento de click para adicionar ao cesto
+    document.querySelectorAll('.produto button').forEach(button => {
+        button.addEventListener('click', () => {
+            const id = parseInt(button.dataset.id, 10);
+            const produto = produtos.find(p => p.id === id);
+            adicionarAoCesto(produto);
         });
-}
-
-// Função para carregar produtos na página
-function carregarProdutos(produtos) {
-    const secaoProdutos = document.querySelector("#produtos");
-    secaoProdutos.innerHTML = ""; // Limpa os produtos antigos
-    produtos.forEach((produto) => {
-        const produtoElement = criarProduto(produto);
-        secaoProdutos.appendChild(produtoElement);
     });
 }
 
-// Função para criar um elemento de produto
-function criarProduto(produto) {
-    const article = document.createElement("article");
-    article.className = "produto";
+function adicionarAoCesto(produto) {
+    const produtosSelecionados = document.getElementById('produtos-selecionados');
+    const precoTotal = document.getElementById('preco-total');
 
-    const title = document.createElement("h3");
-    title.textContent = produto.title;
-    article.appendChild(title);
+    cesto.push(produto);
 
-    const img = document.createElement("img");
-    img.src = produto.image;
-    img.alt = produto.title;
-    article.appendChild(img);
+    // Atualizar o cesto na interface
+    produtosSelecionados.innerHTML = cesto
+        .map((item, index) => `
+            <article>
+                <img src="${item.image}" alt="${item.title}">
+                <span>${item.title}</span>
+                <span>€${item.price.toFixed(2)}</span>
+                <button class="remover" data-index="${index}">Remover</button>
+            </article>
+        `)
+        .join('');
 
-    const description = document.createElement("p");
-    description.className = "descricao";
-    description.textContent = produto.description;
-    article.appendChild(description);
+    const total = cesto.reduce((sum, item) => sum + item.price, 0);
+    precoTotal.textContent = `Preço Total: €${total.toFixed(2)}`;
 
-    const price = document.createElement("p");
-    price.className = "preco";
-    price.textContent = `Preço: $${produto.price}`;
-    article.appendChild(price);
-
-    const addButton = document.createElement("button");
-    addButton.textContent = "+ Adicionar ao cesto";
-    addButton.addEventListener("click", () => {
-        const selectedProducts =
-            JSON.parse(localStorage.getItem("produtos-selecionados")) || [];
-        selectedProducts.push(produto);
-        localStorage.setItem("produtos-selecionados", JSON.stringify(selectedProducts));
-        alert(`${produto.title} foi adicionado ao cesto!`);
-        atualizaCesto();
+    // Adicionar evento de remoção do item do cesto
+    document.querySelectorAll('.remover').forEach(button => {
+        button.addEventListener('click', () => {
+            const index = parseInt(button.dataset.index, 10);
+            removerDoCesto(index);
+        });
     });
-    article.appendChild(addButton);
-
-    return article;
 }
 
-// Atualiza o cesto
-function atualizaCesto() {
-    const selectedProducts = JSON.parse(
-        localStorage.getItem("produtos-selecionados")
-    ) || [];
-    const cestoContainer = document.getElementById("cesto");
-    cestoContainer.innerHTML = "";
+function removerDoCesto(index) {
+    cesto.splice(index, 1); // Remove o item do cesto
+    atualizarCesto();
+}
 
-    selectedProducts.forEach((produto) => {
-        const article = criaProdutoCesto(produto);
-        cestoContainer.appendChild(article);
+function atualizarCesto() {
+    const produtosSelecionados = document.getElementById('produtos-selecionados');
+    const precoTotal = document.getElementById('preco-total');
+
+    produtosSelecionados.innerHTML = cesto
+        .map((item, index) => `
+            <article>
+                <img src="${item.image}" alt="${item.title}">
+                <span>${item.title}</span>
+                <span>€${item.price.toFixed(2)}</span>
+                <button class="remover" data-index="${index}">Remover</button>
+            </article>
+        `)
+        .join('');
+
+    const total = cesto.reduce((sum, item) => sum + item.price, 0);
+    precoTotal.textContent = `Preço Total: €${total.toFixed(2)}`;
+
+    // Atualiza os eventos de remoção
+    document.querySelectorAll('.remover').forEach(button => {
+        button.addEventListener('click', () => {
+            const index = parseInt(button.dataset.index, 10);
+            removerDoCesto(index);
+        });
     });
-
-    atualizaPrecoTotal();
 }
 
-// Cria um produto dentro do cesto
-function criaProdutoCesto(produto) {
-    const article = document.createElement("article");
+function inicializar() {
+    // Fetch das categorias para o filtro
+    fetch('https://deisishop.pythonanywhere.com/categories/')
+        .then(res => res.json())
+        .then(categorias => {
+            const selectCategorias = document.getElementById('categorias');
+            categorias.forEach(categoria => {
+                const option = document.createElement('option');
+                option.value = categoria;
+                option.textContent = categoria;
+                selectCategorias.appendChild(option);
+            });
+        });
 
-    const title = document.createElement("h4");
-    title.textContent = produto.title;
-    article.appendChild(title);
+    // Fetch dos produtos da API
+    fetch('https://deisishop.pythonanywhere.com/products/')
+        .then(res => res.json())
+        .then(data => {
+            produtos.push(...data); // Adicionar os produtos à lista
+            renderProdutos(produtos); // Renderizar os produtos
+        });
 
-    const img = document.createElement("img");
-    img.src = produto.image;
-    img.alt = produto.title;
-    article.appendChild(img);
+    // Adicionar evento ao botão de aplicar filtro
+    document.getElementById('aplicar-filtro').addEventListener('click', () => {
+        const categoriaSelecionada = document.getElementById('categorias').value;
+        const textoProcurar = document.getElementById('pesquisar').value.toLowerCase();
+        const ordenarPor = document.getElementById('ordenar').value;
 
-    const price = document.createElement("p");
-    price.textContent = `Preço: $${produto.price}`;
-    article.appendChild(price);
+        let produtosFiltrados = produtos.filter(p =>
+            (categoriaSelecionada === 'all' || p.category === categoriaSelecionada) &&
+            p.title.toLowerCase().includes(textoProcurar)
+        );
 
-    const removeButton = document.createElement("button");
-    removeButton.textContent = "Remover";
-    removeButton.addEventListener("click", () => {
-        let selectedProducts =
-            JSON.parse(localStorage.getItem("produtos-selecionados")) || [];
-        selectedProducts = selectedProducts.filter((p) => p.title !== produto.title);
-        localStorage.setItem("produtos-selecionados", JSON.stringify(selectedProducts));
-        atualizaCesto();
+        if (ordenarPor === 'asc') {
+            produtosFiltrados.sort((a, b) => a.price - b.price);
+        } else if (ordenarPor === 'desc') {
+            produtosFiltrados.sort((a, b) => b.price - a.price);
+        }
+
+        renderProdutos(produtosFiltrados); // Atualizar a lista de produtos
     });
-    article.appendChild(removeButton);
-
-    return article;
 }
 
-// Atualiza o preço total do cesto
-function atualizaPrecoTotal() {
-    const selectedProducts = JSON.parse(
-        localStorage.getItem("produtos-selecionados")
-    ) || [];
-    const total = selectedProducts.reduce((acc, produto) => acc + produto.price, 0);
-    const totalElement = document.getElementById("preco-total");
-    totalElement.textContent = `Preço Total: $${total.toFixed(2)}`;
-}
+inicializar(); // Iniciar o processo
