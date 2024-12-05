@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Loja</h1>
+        <nav>
+            <ul>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#cesto">Cesto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção principal -->
+    <section id="produtos">
+        <h2 class="titulo-secao">Selecione os Seus Produtos</h2>
+        <div class="filtro-produtos">
+            <div class="caixa-filtro">
+                <label for="categorias">Filtrar: </label>
+                <select id="categorias">
+                    <option value="all">Todas as Categorias</option>
+                </select>
+                <label for="ordenar">Ordenar: </label>
+                <select id="ordenar">
+                    <option value="asc">Preço: Crescente</option>
+                    <option value="desc">Preço: Decrescente</option>
+                    <option value="reviews-asc">Avaliações: Crescente</option>
+                    <option value="reviews-desc">Avaliações: Decrescente</option>
+                </select>
+                <label for="pesquisar">Procurar: </label>
+                <input type="text" id="pesquisar" placeholder="Digite para procurar...">
+                <button id="aplicar-filtro">Aplicar</button>
+                <button id="menos-info">Menos Info</button>
+            </div>
+        </div>
+        <div id="lista-produtos"></div>
+    </section>
+
+    <section id="cesto">
+        <h3>Produtos Selecionados</h3>
+        <div id="produtos-selecionados"></div>
+        <p id="preco-total">Preço Total: €0.00</p>
+        <button id="remover-tudo">Esvaziar Carrinho</button>
+    </section>
+
+    <section id="finalizar-compra">
+        <h3>Finalizar Compra</h3>
+        <input type="text" id="nome-cliente" placeholder="Insira seu nome">
+        <button id="comprar">Comprar</button>
+    </section>
+
+    <script src="main.js"></script>
+</body>
+</html>
