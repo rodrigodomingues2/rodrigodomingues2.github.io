@@ -2,9 +2,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* medidas sao tomadas da borda */
+    /* Medidas são tomadas da borda */
 }
 
+body {
+    padding: 20px; /* Adiciona uma margem interna em toda a página */
+    line-height: 1.6; /* Para melhorar a legibilidade */
+}
+
+/* Cabeçalho */
 header {
     position: sticky;
     top: 0;
@@ -13,6 +19,7 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 20px;
+    margin-bottom: 20px; /* Distância abaixo do cabeçalho */
 }
 
 header h1 {
@@ -32,6 +39,7 @@ header nav a {
     font-size: 18px;
 }
 
+/* Estilo de navegação */
 header nav a:link {
     background-color: #444;
 }
@@ -56,14 +64,15 @@ header nav a:last-child:hover {
     background-color: #aaa;
 }
 
+/* Conteúdo principal */
 main {
-    height: 90vh;
-    background: purple;
+    padding: 20px;
+    margin-bottom: 60px; /* Distância ao final do conteúdo principal */
 }
 
+/* Estilos para artigos */
 article {
-    height: 100vh;
-    background: orange;
+    margin-bottom: 40px; /* Espaço entre as seções */
 }
 
 article:last-child {
@@ -72,7 +81,7 @@ article:last-child {
     color: white;
 }
 
-/* Estilos para o artigo do poema */
+/* Estilos para o poema */
 #poema {
     display: flex;
     justify-content: center;
@@ -80,6 +89,7 @@ article:last-child {
     background-color: #87CEEB; /* Cor de fundo azul */
     width: 100vw;
     height: 50vh;
+    margin-bottom: 20px; /* Distância abaixo do poema */
 }
 
 #poema div {
@@ -99,79 +109,48 @@ article:last-child {
     margin-top: 20px;
 }
 
-
-/*paisagemmmmm */
+/* Paisagem */
 #paisagem {
     width: 100%;
-    height: 80vh; /* Aumenta a altura para 80% da altura da tela */
+    height: 80vh;
     background-color: #f7f7f7;
+    margin-bottom: 20px; /* Distância abaixo da paisagem */
 }
 
-.imagem-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.imagem-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Mantém o corte para cobrir toda a área */
-}
-
-.imagem-container p {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    font-size: 14px;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.imagem-container p a {
-    color: #fff;
-    text-decoration: none;
-}
-
-/* capitais */
+/* Estilo para as imagens de cidades */
 #cidades {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color: #f7f7f7; /* Fundo claro */
+    background-color: #f7f7f7;
     padding: 20px;
+    margin-bottom: 40px; /* Distância abaixo da seção cidades */
 }
 
-/* Estilos para cada cidade */
 #cidades section {
     margin: 10px;
     width: 100px;
-    border-radius: 10px; /* Arredonda os cantos */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra leve para destacar */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo para a imagem da cidade */
 #cidades section img {
     width: 100%;
     height: 100px;
     object-fit: cover;
-    border-radius: 10px 10px 0 0; /* Cantos arredondados no topo */
+    border-radius: 10px 10px 0 0;
 }
 
-/* Estilo para o nome da cidade */
 #cidades section div {
     padding: 10px;
-    background-color: #fff; /* Fundo branco para o texto */
-    border-radius: 0 0 10px 10px; /* Cantos arredondados no fundo */
-    text-align: center; /* Centraliza o texto */
+    background-color: #fff;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
 }
 
-/* Alterar cor de fundo ao passar o mouse sobre a cidade */
 #cidades section div:hover {
-    background-color: #ddd; /* Cor mais clara ao passar o mouse */
+    background-color: #ddd;
 }
 
 /* Estilos para o artigo "experimenta" */
@@ -181,6 +160,7 @@ article:last-child {
     justify-content: center;
     align-items: center;
     padding: 20px;
+    margin-bottom: 40px; /* Distância abaixo da seção experimenta */
 }
 
 /* Estilo para os círculos */
@@ -188,35 +168,158 @@ article:last-child {
     width: 100px;
     height: 100px;
     background-color: #f7f7f7;
-    border-radius: 50%; /* Formato circular */
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 10px;
 }
 
-/* Estilo para os elementos escondidos */
+/* Elementos escondidos */
 .esconde {
     width: 100px;
     height: 100px;
     background-color: #f7f7f7;
-    display: none; /* Esconde o elemento inicialmente */
+    display: none;
     margin: 10px;
 }
 
-/* Mostrar o elemento escondido ao passar o mouse */
 .esconde:hover {
     display: block;
 }
 
-/* Estilo para os ícones */
+/* Estilo para ícones */
 .icone {
     font-size: 48px;
     margin: 10px;
 }
 
-/* Efeito de rotação ao passar o mouse sobre os ícones */
 .icone:hover {
-    transform: rotate(360deg); /* Rotaciona o ícone */
-    transition: 0.5s; /* Duração da rotação */
+    transform: rotate(360deg);
+    transition: 0.5s;
 }
+
+/* Efeito Parallax */
+.parallax {
+    position: relative;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/0c/GoldenGateBridge-001.jpg');
+    height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parallax-text {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Galeria de Fotografias */
+.photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.photo-item {
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.photo-item p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.photo-item:hover img {
+    transform: scale(1.1);
+}
+
+.photo-item:hover p {
+    opacity: 1;
+}
+
+/* Vídeo em Background */
+.video-background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.video-background video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.overlay h1 {
+    color: #fff;
+    font-size: 3em;
+    text-align: center;
+}
+
+/* Animação na Página de Entrada */
+.animated-text {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px); /* O texto começa com um pequeno deslocamento para cima */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* O texto se move para sua posição normal */
+    }
+}
+
