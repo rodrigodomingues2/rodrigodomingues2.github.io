@@ -1,86 +1,67 @@
-/* styles.css */
-
-body {
-    font-family: Arial, sans-serif; /* Fonte padrão */
-    background-color: #f4f4f4; /* Cor de fundo clara */
-    margin: 0; /* Remove margens padrões */
-    padding: 0; /* Remove preenchimento padrões */
-}
-
-/* Estilo para o cabeçalho */
-header {
-    background-color: #4CAF50; /* Cor de fundo verde */
-    color: white; /* Cor do texto branco */
-    text-align: center; /* Centraliza o texto no cabeçalho */
-    padding: 20px; /* Adiciona preenchimento no cabeçalho */
-}
-
-/* Estilo para o menu de navegação */
-nav {
-    background-color: #333; /* Cor de fundo do menu */
-    padding: 10px; /* Preenchimento no menu */
-    text-align: center; /* Centraliza o texto no menu */
-}
-
-/* Estilo para os links no menu */
-nav a {
-    color: white; /* Cor dos links */
-    margin: 0 15px; /* Margem lateral entre links */
-    text-decoration: none; /* Remove o sublinhado */
-}
-
-/* Efeito ao passar o mouse sobre os links do menu */
-nav a:hover {
-    background-color: #ddd; /* Cor de fundo ao passar o mouse */
-    color: black; /* Cor do texto ao passar o mouse */
-    padding: 5px; /* Preenchimento extra ao passar o mouse */
-}
-
-/* Estilo para seções específicas */
-#fotografias, #video, #poema {
-    background-color: #f9f9f9; /* Cor de fundo clara para as seções */
-    padding: 20px; /* Preenchimento interno */
-    border-radius: 8px; /* Cantos arredondados */
-    margin-bottom: 20px; /* Espaçamento inferior */
-}
-
-/* Estilo para os títulos h3 nas seções */
-#fotografias h3, #video h3, #poema h3 {
-    color: #4CAF50; /* Cor verde para os títulos */
-    font-size: 24px; /* Tamanho da fonte */
-    border-bottom: 2px solid #4CAF50; /* Linha abaixo do título */
-    padding-bottom: 10px; /* Espaçamento abaixo do título */
-    margin-bottom: 20px; /* Espaçamento abaixo do título */
-}
-
-/* Estilo para parágrafos */
-#fotografias p, #video p, #poema p {
-    font-size: 16px; /* Tamanho da fonte */
-    line-height: 1.5; /* Espaçamento entre linhas */
-    margin-bottom: 15px; /* Espaçamento inferior */
-}
-
-/* Estilo para a classe .poema */
-.poema {
-    font-style: italic; /* Estilo itálico para o texto */
-    margin-bottom: 20px; /* Espaçamento inferior */
-    line-height: 1.8; /* Espaçamento entre linhas */
-    text-align: justify; /* Justifica o texto */
-}
-
-/* Estilo para as imagens dentro das seções */
-#fotografias img, #video img, #poema img {
-    max-width: 100%; /* Limita a largura das imagens */
-    height: auto; /* Mantém a proporção das imagens */
-    margin: 0 auto; /* Centraliza as imagens */
-    display: block; /* Faz com que as imagens se comportem como blocos */
-}
-
-/* Estilo para o rodapé */
-footer {
-    background-color: #333; /* Cor de fundo do rodapé */
-    color: white; /* Cor do texto no rodapé */
-    text-align: center; /* Centraliza o texto no rodapé */
-    padding: 10px; /* Adiciona preenchimento no rodapé */
-    margin-top: 20px; /* Espaçamento acima do rodapé */
-}
+/* style */
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4; 
+    }
+    
+    header {
+      background-color: #4CAF50; 
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    
+    nav {
+      background-color: #333; 
+      text-align: center;
+      padding: 10px;
+    }
+    
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+    
+    nav a:hover {
+      background-color: #ddd;
+      color: black;
+      padding: 5px;
+    }
+    
+    .imagens-topo {
+      display: flex;
+      justify-content: center;  
+      align-items: center;      
+      gap: 20px;                
+      padding: 20px 0;          
+    }
+    
+    .imagens-topo img {
+      width: 30%;               
+      border-radius: 5px;       
+      object-fit: cover;        
+    }
+    
+    .conteudo {
+      background-color: #fff;
+      width: 80%;               
+      margin: 20px auto;        
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+    }
+    
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;         
+    }
